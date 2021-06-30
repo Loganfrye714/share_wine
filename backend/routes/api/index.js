@@ -1,45 +1,17 @@
-
 // backend/routes/api/index.js
-const router = require('express').Router();
+const router = require("express").Router();
 
-const sessionRouter = require('./session.js');
-const usersRouter = require('./users.js');
+const sessionRouter = require("./session.js");
+const usersRouter = require("./users.js");
+const wineRouter = require("./wine");
 
-router.use('/session', sessionRouter);
+router.use("/session", sessionRouter);
 
-router.use('/users', usersRouter);
+router.use("/users", usersRouter);
 
-
-
-
-
-
-
+router.use("/wine", wineRouter);
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // -> route testing
 // router.post('/test', function(req, res) {
