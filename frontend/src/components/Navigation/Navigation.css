@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap");
+
+.logo {
+  font-family: "Merriweather", serif;
+  text-decoration: none;
+  color: #722f37;
+  font-size: 24px;
+  padding-left: 16px;
+}

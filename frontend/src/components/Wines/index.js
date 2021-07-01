@@ -18,9 +18,9 @@ const WineContainer = () => {
         {wines.map((wine) => (
           <ul>
             <div>
-              <li>
+              <ol>
                 <img src={wine.img_url} key={wine.id} alt="test" />
-              </li>
+              </ol>
             </div>
           </ul>
         ))}
