@@ -8,7 +8,8 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
-import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+// import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+import { Avatar } from "@material-ui/core";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -38,13 +39,14 @@ function Navigation({ isLoaded }) {
         <input type="text" />
         <SearchOutlinedIcon />
       </div>
-      <div className="header__right">
-        {/* <NavLink>Wines</NavLink> */}
-        <p>Wines</p>
-        <LocalBarIcon />
-      </div>
       <div className="header__rightend">
-        <PersonOutlineIcon />
+        <div>
+          <h2>Wines</h2>
+          <LocalBarIcon />
+        </div>
+        <div>
+          <Avatar />
+        </div>
       </div>
     </div>
     // {isLoaded && sessionLinks} -> need to be in the icon
