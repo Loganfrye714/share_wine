@@ -36,7 +36,7 @@ function Navigation({ isLoaded }) {
         </oi>
       </ul>
       <div className="header__middle">
-        <input type="text" />
+        <input type="text" placeholder="Search any wine" />
         <SearchOutlinedIcon />
       </div>
       <div className="header__rightend">

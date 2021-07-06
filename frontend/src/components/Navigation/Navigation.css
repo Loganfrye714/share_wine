@@ -8,14 +8,20 @@
   z-index: 100;
   background-color: white;
   width: 100%;
+  height: 85px;
   justify-content: space-between;
+  box-shadow: 0 6px 6px -4px lightgray;
 }
-
 .logo {
   font-family: "Merriweather", serif;
+  object-fit: contain;
   text-decoration: none;
   color: #722f37;
   font-size: 32px;
+}
+
+.logo:hover {
+  text-decoration: lightgray underline;
 }
 
 .header__middle {
@@ -24,14 +30,17 @@
   align-items: center;
   max-width: fit-content;
   height: 30px;
-  border: 2px solid beige;
-  border-radius: 999px;
+  padding: 10px;
+  box-shadow: 1px 1px 1px lightgray;
+  border: 1px solid lightgray;
+  border-radius: 500px;
 }
 
 .header__middle > input {
   border: none;
   width: 250px;
   outline-width: 0;
+  outline-color: transparent;
   padding-left: 20px;
 }
 
@@ -44,6 +53,7 @@
 
 .header__rightend > div {
   display: flex;
+  color: #303030;
   padding-right: 25px;
   align-items: center;
 }
