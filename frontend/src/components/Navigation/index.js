@@ -1,15 +1,16 @@
 // frontend/src/components/Navigation/index.js
 import React from "react";
 import "./Navigation.css";
-import SearchIcon from "@material-ui/icons/Search";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-import LocalBarIcon from "@material-ui/icons/LocalBar";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
 // import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
-import { Avatar } from "@material-ui/core";
+import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
+import { GiGrapes } from "react-icons/gi";
+import { GiForestCamp } from "react-icons/gi";
+import { GiGlassCelebration } from "react-icons/gi";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -30,7 +31,7 @@ function Navigation({ isLoaded }) {
     <div className="header">
       <ul>
         <oi>
-          <NavLink exact to="/" className="logo">
+          <NavLink exact to="/" className="header__logo">
             Share Wine
           </NavLink>
         </oi>
@@ -41,11 +42,19 @@ function Navigation({ isLoaded }) {
       </div>
       <div className="header__rightend">
         <div>
-          <h2>Wines</h2>
-          <LocalBarIcon />
+          <GiGlassCelebration />
+          <p>Wines</p>
         </div>
         <div>
-          <Avatar />
+          <GiForestCamp />
+          <p>Regions</p>
+        </div>
+        <div>
+          <GiGrapes />
+          <p>Grapes</p>
+        </div>
+        <div>
+          <AccountCircleOutlinedIcon className="header__profile" />
         </div>
       </div>
     </div>
