@@ -1,7 +1,30 @@
-.campaign__grid {
-  background: url(https://tr-images.condecdn.net/image/M82GoB0wXaN/crop/1020/f/tuscany1.jpg);
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap");
+
+.campaign__card-header {
+  background: url(https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F080aaba2-d958-11e9-a836-b8a7068a08fb.jpg?crop=5986%2C3367%2C15%2C495&resize=1180);
   height: 80vh;
+  max-width: 100%;
+  max-height: 100%;
   position: static;
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+.campaign__card-header-h2 {
+  position: absolute;
+  font-family: "Merriweather", serif;
+  width: 100%;
+  bottom: 350px;
+  color: white;
+  text-align: center;
+}
+
+.campaign__card-header-h1 {
+  position: absolute;
+  width: 100%;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 60px;
+  bottom: 255px;
+  color: white;
+  text-align: center;
 }
