@@ -20,9 +20,10 @@
   width: 100%;
   color: white;
   font-size: 30px;
-  padding-top: 175px;
+  padding-top: 165px;
   position: static;
   text-align: center;
+  margin-bottom: -30px;
 }
 
 .campaign__card-header-h1 {
@@ -41,9 +42,9 @@
 
 .campaign__card-content {
   height: 25vh;
-  box-shadow: 0px 5px 5px lightgray;
+  box-shadow: 0px 10px 25px lightgray;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   margin: 75px;
-  margin-top: -85px;
+  margin-top: -75px;
 }
