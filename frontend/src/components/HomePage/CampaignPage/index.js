@@ -10,9 +10,11 @@ const CampaignPageContainer = () => {
           <h1 className="campaign__card-header-h1">Italy</h1>
         </div>
         <div className="campaign__card-content">
-          <p>Discover the amazing wines</p>
-          <button>Shop Now</button>
-          {/* when you hover over shop now it should show a button */}
+          <div className="campaign_card-text">
+            <p>Discover the incredible wines of Italy.</p>
+            <button id="campaign_card-button">Shop Now</button>
+            {/* when you hover over shop now it should show a button */}
+          </div>
         </div>
       </div>
     </div>
