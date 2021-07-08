@@ -1,0 +1,14 @@
+.allwines_grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.wine_card {
+  display: flex;
+  justify-content: space-around;
+  background-color: beige;
+  border-radius: 50px;
+  width: 350px;
+  height: 150px;
+}

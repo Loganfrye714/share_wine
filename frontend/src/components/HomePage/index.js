@@ -1,5 +1,5 @@
-import WineContainer from "./wines";
 import CampaignPageContainer from "./CampaignPage";
+import WineContainer from "./Wines/wines";
 
 const HomePageContainer = () => {
   return (
