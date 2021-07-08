@@ -1,30 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Shadows+Into+Light&display=swap");
 
 .campaign__card-header {
   background: url(https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F080aaba2-d958-11e9-a836-b8a7068a08fb.jpg?crop=5986%2C3367%2C15%2C495&resize=1180);
-  height: 80vh;
+  height: 50vh;
   max-width: 100%;
   max-height: 100%;
   position: static;
   background-size: 100%;
   background-repeat: no-repeat;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  box-shadow: 0px 0px 5px lightgray;
+  margin: 75px;
 }
 
 .campaign__card-header-h2 {
   position: absolute;
-  font-family: "Merriweather", serif;
+  font-family: "Noto Sans JP", sans-serif;
   width: 100%;
-  bottom: 350px;
   color: white;
+  font-size: 30px;
+  padding-top: 175px;
+  position: static;
   text-align: center;
 }
 
 .campaign__card-header-h1 {
   position: absolute;
   width: 100%;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 60px;
-  bottom: 255px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 50px;
   color: white;
+  position: static;
   text-align: center;
+}
+
+.campaign__card {
+  padding: 30px;
+}
+
+.campaign__card-content {
+  height: 25vh;
+  box-shadow: 0px 5px 5px lightgray;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin: 75px;
+  margin-top: -85px;
 }
