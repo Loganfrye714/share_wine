@@ -26,10 +26,10 @@ const WineContainer = () => {
               alt="test"
             />
             <div className="wine__cardInfo">
-              <h3>{wine.name}</h3>
+              <h2>{wine.name}</h2>
               <h4>{wine.region}</h4>
-              <h4>{wine.price}</h4>
-              <button></button>
+              <h4>${wine.price}</h4>
+              <button id="wine__cardButton">Reserve</button>
             </div>
           </div>
         </>
