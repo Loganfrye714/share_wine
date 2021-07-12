@@ -8,9 +8,9 @@
 
 .wine__card {
   display: flex;
-  margin: 10px;
+  margin: 15px;
   background-color: #eae0c83d;
-  width: 275px;
+  width: 300px;
   position: relative;
 }
 
@@ -21,10 +21,10 @@
 }
 
 .wine__cardInfo {
+  margin: 5px;
   word-wrap: break-word;
   font-family: "Noto Sans JP", sans-serif;
   margin-left: 25px;
-  padding: -5px;
 }
 
 #wine__cardButton {

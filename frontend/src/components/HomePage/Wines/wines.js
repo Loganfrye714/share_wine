@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import winesReducer, { getWines } from "../../../store/wines";
-import { NavLink } from "react-router-dom";
 import "./wines.css";
 
 const WineContainer = () => {
   // Declare variables from hooks
   const dispatch = useDispatch();
   const wines = useSelector((state) => Object.values(state.wines));
-  console.log(wines);
 
   useEffect(() => {
     dispatch(getWines());
@@ -23,11 +21,14 @@ const WineContainer = () => {
               id="allwines__image"
               src={wine.img_url}
               key={wine.id}
-              alt="test"
+              alt="wines"
             />
             <div className="wine__cardInfo">
               <h2>{wine.name}</h2>
-              <h4>{wine.region}</h4>
+              <h4>{wine.location}</h4>
+              <h4>
+                {wine.grape} {wine.vintage}
+              </h4>
               <h4>${wine.price}</h4>
               <button id="wine__cardButton">Reserve</button>
             </div>
