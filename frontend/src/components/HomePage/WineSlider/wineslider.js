@@ -32,17 +32,27 @@ const ImageSlider = () => {
       <ArrowBackIcon className="slider_left-arrow" onClick={prevSlide} />
       {wines.map((wine, index) => (
         <>
-          <div
-            className={index === current ? "slide active" : "slide"}
-            key={index}
-          >
+          <div className="allwines__grid" key={index}>
             {index === current && (
-              <img
-                className="image"
-                src={wine.img_url}
-                key={wine.id}
-                alt="wines"
-              />
+              <>
+                <div className="wine__card">
+                  <img
+                    id="allwines__image"
+                    src={wine.img_url}
+                    key={wine.id}
+                    alt="wines"
+                  />
+                  <div className="wine__cardInfo">
+                    <h2>{wine.name}</h2>
+                    <h4>{wine.location}</h4>
+                    <h4>
+                      {wine.grape} {wine.vintage}
+                    </h4>
+                    <h4>${wine.price}</h4>
+                    <button id="wine__cardButton">Reserve</button>
+                  </div>
+                </div>
+              </>
             )}
           </div>
         </>
