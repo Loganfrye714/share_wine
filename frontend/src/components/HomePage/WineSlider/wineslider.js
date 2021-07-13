@@ -18,13 +18,13 @@ const ImageSlider = () => {
   }, [dispatch]);
 
   // if the current number reaches the end of the array (length - 1) then set current to the beginning else current + 1
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
+  const prevSlide = () => {
+    setCurrent(current === length - 4 ? 0 : current + 1)
   }
 
 // if current is === 0 (original image) set the length - 1 else subtract one
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1)
+  const  nextSlide = () => {
+    setCurrent(current === 0 ? length - 4 : current - 1)
   }
 
 

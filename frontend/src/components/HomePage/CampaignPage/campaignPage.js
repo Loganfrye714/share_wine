@@ -12,7 +12,7 @@ const CampaignPageContainer = () => {
         <div className="campaign__card-content">
           <div className="campaign_card-text">
             <p>Discover the incredible wines of Italy.</p>
-            <button id="campaign_card-button">Shop Now</button>
+            <button id="campaign_card-button">Explore Now</button>
           </div>
         </div>
       </div>
