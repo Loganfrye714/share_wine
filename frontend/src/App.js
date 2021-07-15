@@ -6,6 +6,8 @@ import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import SingleWinePageContainer from "./components/SingleWinePage/singleWinePage";
+import WineContainer from "./components/HomePage/Wines/wines";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +24,13 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/">
+          <Route path="/wines">
+            <WineContainer />
+          </Route>
+          <Route path="/:id">
+            <SingleWinePageContainer />
+          </Route>
+          <Route>
             <HomePage />
           </Route>
         </Switch>
