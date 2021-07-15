@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getWines } from "../../../store/wines";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { NavLink } from "react-router-dom";
 import "./wineslider.css";
 
 const ImageSlider = () => {
@@ -19,14 +20,13 @@ const ImageSlider = () => {
 
   // if the current number reaches the end of the array (length - 1) then set current to the beginning else current + 1
   const prevSlide = () => {
-    setCurrent(current === length - 4 ? 0 : current + 1)
-  }
+    setCurrent(current === length - 4 ? 0 : current + 1);
+  };
 
-// if current is === 0 (original image) set the length - 1 else subtract one
-  const  nextSlide = () => {
-    setCurrent(current === 0 ? length - 4 : current - 1)
-  }
-
+  // if current is === 0 (original image) set the length - 1 else subtract one
+  const nextSlide = () => {
+    setCurrent(current === 0 ? length - 4 : current - 1);
+  };
 
   return (
     <div className="slider">
@@ -50,7 +50,13 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <button id="wine__cardButton" key={wine.id}>Reserve</button>
+                    <>
+                      <NavLink to={`/${index}`}>
+                        <button id="wine__cardButton" key={wine.id}>
+                          Reserve
+                        </button>
+                      </NavLink>
+                    </>
                   </div>
                 </div>
               </>
@@ -73,7 +79,13 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <button id="wine__cardButton">Reserve</button>
+                    <>
+                      <NavLink to={`/${index}`}>
+                        <button id="wine__cardButton" key={wine.id}>
+                          Reserve
+                        </button>
+                      </NavLink>
+                    </>
                   </div>
                 </div>
               </>
@@ -96,13 +108,19 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <button id="wine__cardButton">Reserve</button>
+                    <>
+                      <NavLink to={`/${index}`}>
+                        <button id="wine__cardButton" key={wine.id}>
+                          Reserve
+                        </button>
+                      </NavLink>
+                    </>
                   </div>
                 </div>
               </>
             )}
           </div>
-                    <div className="allwines__grid" key={index + 1}>
+          <div className="allwines__grid" key={index + 1}>
             {index === current + 3 && (
               <>
                 <div className="wine__card">
@@ -119,7 +137,13 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <button id="wine__cardButton">Reserve</button>
+                    <>
+                      <NavLink to={`/${index}`}>
+                        <button id="wine__cardButton" key={wine.id}>
+                          Reserve
+                        </button>
+                      </NavLink>
+                    </>
                   </div>
                 </div>
               </>
