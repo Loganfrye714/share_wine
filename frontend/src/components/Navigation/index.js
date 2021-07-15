@@ -2,7 +2,7 @@
 import React from "react";
 import "./Navigation.css";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
@@ -42,16 +42,9 @@ function Navigation({ isLoaded }) {
       </div>
       <div className="header__rightend">
         <div>
-          <GiGlassCelebration />
-          <p>Wines</p>
-        </div>
-        <div>
-          <GiForestCamp />
-          <p>Regions</p>
-        </div>
-        <div>
-          <GiGrapes />
-          <p>Grapes</p>
+          <NavLink to="/wines">
+            <h3 id="header__rightend-wines">Wines</h3>
+          </NavLink>
         </div>
         <div>
           <AccountCircleOutlinedIcon className="header__profile" />

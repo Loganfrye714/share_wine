@@ -11,34 +11,40 @@ const SingleWinePageContainer = () => {
 
   const { id } = useParams();
 
-  console.log(wines[id].img_url + "this is the log");
-
   useEffect(() => {
     dispatch(getWines());
   }, [dispatch]);
 
   return (
-    <div className="allwines__grid">
-      <>
-        <div className="wine__card">
-          <img
-            id="allwines__image"
-            src={wines[id].img_url}
-            key={wines[id].id}
-            alt="wines"
-          />
-          <div className="wine__cardInfo">
-            <h2>{wines[id].name}</h2>
-            <h4>{wines[id].location}</h4>
-            <h4>
-              {wines[id].grape} {wines[id].vintage}
-            </h4>
-            <h4>${wines[id].price}</h4>
-            <button id="wine__cardButton">Reserve</button>
+    <>
+      <div className="singleWine__grid">
+        <>
+          <div className="singleWine__card">
+            <img
+              id="singleWine__image"
+              src={wines[id].img_url}
+              key={wines[id].id}
+              alt="singleWine"
+            />
+            <div className="singleWine__cardInfo">
+              <h2>{wines[id].name}</h2>
+              <h4>{wines[id].location}</h4>
+              <h4>
+                {wines[id].grape} {wines[id].vintage}
+              </h4>
+              <h4>${wines[id].price}</h4>
+              <button id="singleWine__cardButton">Reserve</button>
+            </div>
           </div>
-        </div>
-      </>
-    </div>
+          <div className="singleWine__reviews">
+            <h1>Reviews</h1>
+          </div>
+          <div className="singleWine__map">
+            <h1>Map --- Map</h1>
+          </div>
+        </>
+      </div>
+    </>
   );
 };
 

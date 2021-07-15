@@ -66,3 +66,11 @@
 .header__profile {
   color: rgb(92, 91, 91);
 }
+
+#header__rightend-wines {
+  color: rgb(92, 91, 91);
+}
+
+a {
+  text-decoration: none;
+}
