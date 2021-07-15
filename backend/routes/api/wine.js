@@ -3,6 +3,8 @@ const asyncHandler = require("express-async-handler");
 const router = express.Router();
 const { Wine } = require("../../db/models");
 
+// -> find all wines
+
 router.get(
   "",
   asyncHandler(async (req, res) => {

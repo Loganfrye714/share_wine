@@ -1,5 +1,6 @@
 // Define Action Types as Constants
 const SET_WINES = "wines/SET_WINES";
+const GET_ONE_WINE = "wine/GET_WINE";
 
 // DEFINE ACTION CREATORS
 const setWines = (wines) => ({
@@ -13,6 +14,7 @@ export const getWines = () => async (dispatch) => {
   const wines = await res.json();
   dispatch(setWines(wines));
 };
+
 
 // Set the inital state
 const initalState = {};

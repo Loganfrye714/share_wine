@@ -50,7 +50,7 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <button id="wine__cardButton">Reserve</button>
+                    <button id="wine__cardButton" key={wine.id}>Reserve</button>
                   </div>
                 </div>
               </>

@@ -54,11 +54,10 @@ function Navigation({ isLoaded }) {
           <p>Grapes</p>
         </div>
         <div>
-          <AccountCircleOutlinedIcon className="header__profile" />
+          <AccountCircleOutlinedIcon className="header__profile"/>
         </div>
       </div>
     </div>
-    // {isLoaded && sessionLinks} -> need to be in the icon
   );
 }
 
