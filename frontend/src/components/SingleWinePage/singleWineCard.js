@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import winesReducer, { getWines } from "../../store/wines";
 import { useParams } from "react-router-dom";
-import "./singleWinePage.css";
+import "./singleWineCard.css";
 
-const SingleWinePageContainer = () => {
+const SingleWineCard = () => {
   // Declare variables from hooks
   const dispatch = useDispatch();
   const wines = useSelector((state) => Object.values(state.wines));
@@ -36,9 +36,6 @@ const SingleWinePageContainer = () => {
               <button id="singleWine__cardButton">Reserve</button>
             </div>
           </div>
-          <div className="singleWine__reviews">
-            <h1>Reviews</h1>
-          </div>
           <div className="singleWine__map">
             <h1>Map Section</h1>
           </div>
@@ -48,4 +45,4 @@ const SingleWinePageContainer = () => {
   );
 };
 
-export default SingleWinePageContainer;
+export default SingleWineCard;

@@ -6,7 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import SingleWinePageContainer from "./components/SingleWinePage/singleWinePage";
+import SingleWinePageContainer from "./components/SingleWinePage";
 import WineContainer from "./components/HomePage/Wines/wines";
 
 function App() {
