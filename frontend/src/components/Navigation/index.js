@@ -43,8 +43,11 @@ function Navigation({ isLoaded }) {
       <div className="header__rightend">
         <div>
           <NavLink to="/wines">
-            <h3 id="header__rightend-wines">Wines</h3>
+            <h3 className="header__rightend-wines">Wines</h3>
           </NavLink>
+        </div>
+        <div>
+          <h3 className="header__rightend-wines">Wishlist</h3>
         </div>
         <div>
           <AccountCircleOutlinedIcon className="header__profile" />

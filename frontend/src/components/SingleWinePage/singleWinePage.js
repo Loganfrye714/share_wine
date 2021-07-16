@@ -40,7 +40,7 @@ const SingleWinePageContainer = () => {
             <h1>Reviews</h1>
           </div>
           <div className="singleWine__map">
-            <h1>Map --- Map</h1>
+            <h1>Map Section</h1>
           </div>
         </>
       </div>

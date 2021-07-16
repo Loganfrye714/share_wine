@@ -32,7 +32,7 @@
   box-shadow: 1px 1px 1px lightgray;
   border: 1px solid lightgray;
   border-radius: 500px;
-  margin-right: 650px;
+  margin-right: 565px;
 }
 
 .header__middle > input {
@@ -67,7 +67,7 @@
   color: rgb(92, 91, 91);
 }
 
-#header__rightend-wines {
+.header__rightend-wines {
   color: rgb(92, 91, 91);
 }
 
