@@ -4,6 +4,7 @@
   background-color: #eae0c83d;
   flex-wrap: wrap;
   padding-bottom: 140px;
+  padding-top: 20px;
 }
 
 .singleWine__card {
@@ -49,4 +50,10 @@
 
 .singleWine__map {
   background-color: yellow;
+}
+
+.singleWine__bio {
+  display: flex;
+  width: 250px;
+  font-size: 18px;
 }
