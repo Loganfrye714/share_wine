@@ -1,22 +1,40 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import winesReducer, { getWines } from "../../store/wines";
+import { getWines } from "../../store/wines";
 import { useParams } from "react-router-dom";
+import { addReview } from "../../store/review";
 import "./singleWineCard.css";
 
 const SingleWineCard = () => {
   // Declare variables from hooks
   const dispatch = useDispatch();
   const wines = useSelector((state) => Object.values(state.wines));
-
   const { id } = useParams();
 
   useEffect(() => {
     dispatch(getWines());
   }, [dispatch]);
 
+  // variables for the review posting
+  const [rating, setRating] = useState("");
+  const [comment, setComment] = useState("");
+  const [wineId, setWineId] = useState(wines[id].id);
+  const [userId, setUserId] = useState(1);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const review = {
+      rating,
+      comment,
+      wineId,
+      userId,
+    };
+    console.log(review);
+    dispatch(addReview(review));
+  };
+
   return (
-    <>
+    <form onSubmit={onSubmit}>
       <div className="singleWine__grid">
         <>
           <div className="singleWine__bio">
@@ -45,7 +63,25 @@ const SingleWineCard = () => {
                 {wines[id].grape} {wines[id].vintage}
               </h4>
               <h4>${wines[id].price}</h4>
-              <button id="singleWine__cardButton">Wishlist</button>
+              <div>
+                <button>Post a review</button>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  onChange={(e) => setComment(e.target.value)}
+                ></input>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="rating"
+                  name="rating"
+                  max="5"
+                  onChange={(e) => setRating(e.target.value)}
+                ></input>
+              </div>
+              {/* <button id="singleWine__cardButton">Wishlist</button> */}
             </div>
           </div>
           <div className="singleWine__map">
@@ -53,7 +89,7 @@ const SingleWineCard = () => {
           </div>
         </>
       </div>
-    </>
+    </form>
   );
 };
 
