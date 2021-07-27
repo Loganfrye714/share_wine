@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getWines } from "../../store/wines";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { addReview } from "../../store/review";
 import "./singleWineCard.css";
 
 const SingleWineCard = () => {
   // Declare variables from hooks
+  const history = useHistory();
   const dispatch = useDispatch();
   const wines = useSelector((state) => Object.values(state.wines));
   const { id } = useParams();
@@ -31,6 +32,9 @@ const SingleWineCard = () => {
     };
     console.log(review);
     dispatch(addReview(review));
+    history.push(`/`);
+    // this is what is needs to refresh to once the url id bug is fixed
+    // history.push(`/${id}`);
   };
 
   return (
