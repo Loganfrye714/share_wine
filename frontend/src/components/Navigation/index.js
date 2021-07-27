@@ -41,6 +41,7 @@ function Navigation({ isLoaded }) {
         <SearchOutlinedIcon />
       </div>
       <div className="header__rightend">
+        <div>{isLoaded && sessionLinks}</div>
         <div>
           <NavLink to="/wines">
             <h3 className="header__rightend-wines">Wines</h3>
