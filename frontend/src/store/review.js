@@ -1,10 +1,16 @@
 import { csrfFetch } from "./csrf";
 const POST_REVIEW = "review/POST_REVIEW";
+const GET_REVIEWS = "review/GET_REVIEWS";
 
 // define action creators
 
 const postReview = (review) => ({
   type: POST_REVIEW,
+  review,
+});
+
+const getReview = (review) => ({
+  type: GET_REVIEWS,
   review,
 });
 
@@ -26,6 +32,13 @@ export const addReview = (review) => async (dispatch) => {
   dispatch(postReview(completedReview.review));
 };
 
+export const findReview = (id) => async (dispatch) => {
+  const res = await fetch(`/api/review/${id}`);
+  const reviews = await res.json();
+  dispatch(getReview(reviews));
+  return reviews;
+};
+
 // Define an inital state
 const initalState = {};
 
@@ -36,6 +49,11 @@ const reviewReducer = (state = initalState, action) => {
       const newState = { ...state };
       newState[action.review.id] = action.review;
       return newState;
+    case GET_REVIEWS: {
+      const newState = { ...state };
+      newState[action.reviews.id] = action.reviews;
+      return newState;
+    }
     default:
       return state;
   }

@@ -2,21 +2,28 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getWines } from "../../store/wines";
 import { useParams, useHistory } from "react-router-dom";
-import { addReview } from "../../store/review";
+import { addReview, findReview } from "../../store/review";
 import "./singleWineCard.css";
 
 const SingleWineCard = () => {
-  // Declare variables from hooks
+  // Hooks
   const history = useHistory();
   const dispatch = useDispatch();
-  const wines = useSelector((state) => Object.values(state.wines));
-  const session = useSelector((state) => state.session);
-
-  const { id } = useParams();
 
   useEffect(() => {
     dispatch(getWines());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(findReview());
+  }, [dispatch]);
+
+  // Variables for indvidiual wine
+  const { id } = useParams();
+  const wines = useSelector((state) => Object.values(state.wines));
+  const session = useSelector((state) => state.session);
+  const values = useSelector((state) => Object.values(state));
+  console.log(values);
 
   // variables for the review posting
   const [rating, setRating] = useState("");
