@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getWines } from "../../store/wines";
 import { useParams, useHistory } from "react-router-dom";
-import { addReview, findReview } from "../../store/review";
+import { addReview } from "../../store/review";
 import "./singleWineCard.css";
 
 const SingleWineCard = () => {
@@ -12,10 +12,6 @@ const SingleWineCard = () => {
 
   useEffect(() => {
     dispatch(getWines());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(findReview());
   }, [dispatch]);
 
   // Variables for indvidiual wine

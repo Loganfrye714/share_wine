@@ -1,5 +1,6 @@
 import { csrfFetch } from "./csrf";
 const POST_REVIEW = "review/POST_REVIEW";
+const GET_REVIEWS_FOR_ONE_WINE = "review/GET_REVIEWS_FOR_ONE_WINE";
 const GET_REVIEWS = "review/GET_REVIEWS";
 
 // define action creators
@@ -9,8 +10,13 @@ const postReview = (review) => ({
   review,
 });
 
-const getReview = (review) => ({
+const findAllReviews = (review) => ({
   type: GET_REVIEWS,
+  review,
+});
+
+const getReviewsOneWine = (review) => ({
+  type: GET_REVIEWS_FOR_ONE_WINE,
   review,
 });
 
@@ -32,13 +38,6 @@ export const addReview = (review) => async (dispatch) => {
   dispatch(postReview(completedReview.review));
 };
 
-export const findReview = (id) => async (dispatch) => {
-  const res = await fetch(`/api/review/${id}`);
-  const reviews = await res.json();
-  dispatch(getReview(reviews));
-  return reviews;
-};
-
 // Define an inital state
 const initalState = {};
 
@@ -49,14 +48,22 @@ const reviewReducer = (state = initalState, action) => {
       const newState = { ...state };
       newState[action.review.id] = action.review;
       return newState;
-    case GET_REVIEWS: {
-      const newState = { ...state };
-      newState[action.reviews.id] = action.reviews;
-      return newState;
-    }
     default:
       return state;
   }
 };
 
 export default reviewReducer;
+
+// export const findReviewOneWine = (id) => async (dispatch) => {
+//   const res = await fetch(`/api/review/${id}`);
+//   const reviewsForOneWine = await res.json();
+//   dispatch(getReviewsOneWine(reviewsForOneWine));
+//   return reviewsForOneWine;
+// };
+
+// export const getAllReviews = () => async (dispatch) => {
+//   const res = await fetch("/api/review");
+//   const allReviews = await res.json();
+//   dispatch(findAllReviews(allReviews));
+// };

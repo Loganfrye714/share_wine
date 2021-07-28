@@ -33,4 +33,12 @@ router.get(
   })
 );
 
+router.get(
+  "/",
+  asyncHandler(async (req, res) => {
+    const reviews = await Review.findAll({});
+    res.json(reviews);
+  })
+);
+
 module.exports = router;
