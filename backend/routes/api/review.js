@@ -1,7 +1,6 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 const router = express.Router();
-
 const { Review } = require("../../db/models");
 
 router.post(
@@ -18,6 +17,19 @@ router.post(
 
     await review.save();
     return res.json({ review });
+  })
+);
+
+router.get(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const reviews = await Review.findAll({
+      where: {
+        wineId: id,
+      },
+    });
+    res.json(reviews);
   })
 );
 

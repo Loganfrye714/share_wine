@@ -10,6 +10,8 @@ const SingleWineCard = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const wines = useSelector((state) => Object.values(state.wines));
+  const session = useSelector((state) => state.session);
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -20,7 +22,7 @@ const SingleWineCard = () => {
   const [rating, setRating] = useState("");
   const [comment, setComment] = useState("");
   const [wineId, setWineId] = useState(wines[id].id);
-  const [userId, setUserId] = useState(1);
+  const [userId, setUserId] = useState(session.user.id);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -85,7 +87,7 @@ const SingleWineCard = () => {
                   onChange={(e) => setRating(e.target.value)}
                 ></input>
               </div>
-              {/* <button id="singleWine__cardButton">Wishlist</button> */}
+              <button id="singleWine__cardButton">Wishlist</button>
             </div>
           </div>
           <div className="singleWine__map">
