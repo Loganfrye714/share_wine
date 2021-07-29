@@ -19,7 +19,6 @@ const SingleWineCard = () => {
   const wines = useSelector((state) => Object.values(state.wines));
   const session = useSelector((state) => state.session);
   const values = useSelector((state) => Object.values(state));
-  console.log(values);
 
   // variables for the review posting
   const [rating, setRating] = useState("");
@@ -35,7 +34,6 @@ const SingleWineCard = () => {
       wineId,
       userId,
     };
-    console.log(review);
     dispatch(addReview(review));
     history.push(`/`);
     // this is what is needs to refresh to once the url id bug is fixed

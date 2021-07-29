@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import winesReducer, { getWines } from "../../../store/wines";
-import { getAllReviews } from "../../../store/review";
 import "./wines.css";
 
 const WineContainer = () => {

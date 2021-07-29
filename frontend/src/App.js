@@ -8,6 +8,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SingleWinePageContainer from "./components/SingleWinePage";
 import WineContainer from "./components/HomePage/Wines/wines";
+import ReviewContainer from "./components/Review/review";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route path="/review">
+            <ReviewContainer />
+          </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>

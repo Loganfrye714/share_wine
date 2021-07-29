@@ -15,7 +15,6 @@ export const getWines = () => async (dispatch) => {
   dispatch(setWines(wines));
 };
 
-
 // Set the inital state
 const initalState = {};
 

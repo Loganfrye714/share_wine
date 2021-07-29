@@ -1,6 +1,5 @@
 import { csrfFetch } from "./csrf";
 const POST_REVIEW = "review/POST_REVIEW";
-const GET_REVIEWS_FOR_ONE_WINE = "review/GET_REVIEWS_FOR_ONE_WINE";
 const GET_REVIEWS = "review/GET_REVIEWS";
 
 // define action creators
@@ -10,17 +9,18 @@ const postReview = (review) => ({
   review,
 });
 
-const findAllReviews = (review) => ({
+const findAllReviews = (reviews) => ({
   type: GET_REVIEWS,
-  review,
-});
-
-const getReviewsOneWine = (review) => ({
-  type: GET_REVIEWS_FOR_ONE_WINE,
-  review,
+  reviews,
 });
 
 // Define Thunks
+
+export const allReviews = () => async (dispatch) => {
+  const res = await fetch("./api/review");
+  const reviews = await res.json();
+  dispatch(findAllReviews(reviews));
+};
 
 export const addReview = (review) => async (dispatch) => {
   const { rating, comment, wineId, userId } = review;
@@ -44,10 +44,15 @@ const initalState = {};
 // Define reducer
 const reviewReducer = (state = initalState, action) => {
   switch (action.type) {
-    case POST_REVIEW:
+    case GET_REVIEWS:
+      const newState = { ...state };
+      newState[action.reviews.id] = action.reviews;
+      return newState;
+    case POST_REVIEW: {
       const newState = { ...state };
       newState[action.review.id] = action.review;
       return newState;
+    }
     default:
       return state;
   }
