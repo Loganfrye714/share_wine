@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getWines } from "../../store/wines";
 import { useParams, useHistory } from "react-router-dom";
-import { addReview } from "../../store/review";
+import { addReview, findReviewsOneWine } from "../../store/review";
 import "./singleWineCard.css";
 
 const SingleWineCard = () => {
@@ -12,6 +12,10 @@ const SingleWineCard = () => {
 
   useEffect(() => {
     dispatch(getWines());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(findReviewsOneWine(wineId));
   }, [dispatch]);
 
   // Variables for indvidiual wine
@@ -25,6 +29,8 @@ const SingleWineCard = () => {
   const [comment, setComment] = useState("");
   const [wineId, setWineId] = useState(wines[id].id);
   const [userId, setUserId] = useState(session.user.id);
+
+  console.log(wineId);
 
   const onSubmit = async (e) => {
     e.preventDefault();
