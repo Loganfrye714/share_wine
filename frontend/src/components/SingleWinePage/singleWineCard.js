@@ -22,7 +22,6 @@ const SingleWineCard = () => {
   const { id } = useParams();
   const wines = useSelector((state) => Object.values(state.wines));
   const session = useSelector((state) => state.session);
-  const values = useSelector((state) => Object.values(state));
 
   // variables for the review posting
   const [rating, setRating] = useState("");

@@ -52,7 +52,7 @@ export const addReview = (review) => async (dispatch) => {
 };
 
 // Define an inital state
-const initalState = {};
+let initalState = {};
 
 // Define reducer
 const reviewReducer = (state = initalState, action) => {
@@ -68,7 +68,7 @@ const reviewReducer = (state = initalState, action) => {
     }
     case GET_REVIEWS_FOR_ONE_WINE: {
       const newState = { ...state };
-      newState[action.reviews.id] = action.reviews;
+      newState[action.reviews] = action.reviews;
       return newState;
     }
     default:
