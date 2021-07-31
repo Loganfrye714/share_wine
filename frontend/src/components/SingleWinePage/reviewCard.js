@@ -20,17 +20,15 @@ const ReviewCard = () => {
   // Variables for indvidiual wine
   const { id } = useParams();
   const wines = useSelector((state) => Object.values(state.wines));
-  const reviews = useSelector((state) => Object.values(state.review));
+  // const reviews = useSelector((state) => Object.values(state.review));
   const [wineId, setWineId] = useState(wines[id].id);
-  console.log(reviews[0], "this is the reviews array");
-  const reviewArray = reviews[0];
-  console.log(reviewArray);
+  // const reviewArray = reviews[0];
 
   return (
     <div>
-      {reviewArray.map((review) => (
+      {/* {reviewArray.map((review) => (
         <div>{review.comment}</div>
-      ))}
+      ))} */}
     </div>
   );
 };
