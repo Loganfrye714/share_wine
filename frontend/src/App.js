@@ -30,16 +30,16 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/review">
+          <Route path="/review" exact>
             <ReviewContainer />
           </Route>
-          <Route path="/signup">
+          <Route path="/signup" exact>
             <SignupFormPage />
           </Route>
-          <Route path="/wines">
+          <Route path="/wines" exact>
             <WineContainer />
           </Route>
-          <Route path="/:id">
+          <Route path="/:id" exact>
             <SingleWinePageContainer winos={winos} />
           </Route>
           <Route>

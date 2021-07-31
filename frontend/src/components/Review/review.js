@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { allReviews } from "../../store/review";
+import { getOneWine } from "../../store/wines";
 
 const ReviewContainer = () => {
   const dispatch = useDispatch();
-
+  const singleWine = useSelector((state) => Object.values(state.wines));
   useEffect(() => {
-    dispatch(allReviews());
+    dispatch(getOneWine(4));
   }, [dispatch]);
+
+  console.log(singleWine);
 
   return (
     <>

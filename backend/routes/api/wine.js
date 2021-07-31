@@ -13,4 +13,13 @@ router.get(
   })
 );
 
+router.get(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const wines = await Wine.findByPk(id);
+    res.json(wines);
+  })
+);
+
 module.exports = router;

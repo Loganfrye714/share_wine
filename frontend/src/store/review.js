@@ -32,7 +32,6 @@ export const findReviewsOneWine = (id) => async (dispatch) => {
   const res = await fetch(`/api/review/${id}`);
   const reviewsForOneWine = await res.json();
   dispatch(getReviewsOneWine(reviewsForOneWine));
-  console.log(reviewsForOneWine);
   return reviewsForOneWine;
 };
 
@@ -78,9 +77,3 @@ const reviewReducer = (state = initalState, action) => {
 };
 
 export default reviewReducer;
-
-// export const getAllReviews = () => async (dispatch) => {
-//   const res = await fetch("/api/review");
-//   const allReviews = await res.json();
-//   dispatch(findAllReviews(allReviews));
-// };
