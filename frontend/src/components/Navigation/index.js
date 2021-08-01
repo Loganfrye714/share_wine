@@ -28,33 +28,33 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <div className="header">
-      <ul>
-        <oi>
+    <>
+      <div className="header">
+        <div>
           <NavLink exact to="/" className="header__logo">
             Share Wine
           </NavLink>
-        </oi>
-      </ul>
-      <div className="header__middle">
-        <input type="text" placeholder="Search any wine" />
-        <SearchOutlinedIcon />
+        </div>
+        <div className="header__middle">
+          <input type="text" placeholder="Search any wine" />
+          <SearchOutlinedIcon />
+        </div>
+        <div className="header__rightend">
+          <div>{isLoaded && sessionLinks}</div>
+          <div>
+            <NavLink to="/wines">
+              <h3 className="header__rightend-wines">Wines</h3>
+            </NavLink>
+          </div>
+          <div>
+            <h3 className="header__rightend-wines">Wishlist</h3>
+          </div>
+          <div>
+            <AccountCircleOutlinedIcon className="header__profile" />
+          </div>
+        </div>
       </div>
-      <div className="header__rightend">
-        <div>{isLoaded && sessionLinks}</div>
-        <div>
-          <NavLink to="/wines">
-            <h3 className="header__rightend-wines">Wines</h3>
-          </NavLink>
-        </div>
-        <div>
-          <h3 className="header__rightend-wines">Wishlist</h3>
-        </div>
-        <div>
-          <AccountCircleOutlinedIcon className="header__profile" />
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 

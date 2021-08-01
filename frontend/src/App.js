@@ -9,8 +9,6 @@ import Navigation from "./components/Navigation";
 import SingleWinePageContainer from "./components/SingleWinePage";
 import WineContainer from "./components/HomePage/Wines/wines";
 import ReviewContainer from "./components/Review/review";
-import { getWines } from "./store/wines";
-import { useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,20 +17,11 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  const winos = useSelector((state) => Object.values(state.wines));
-
-  useEffect(() => {
-    dispatch(getWines());
-  }, [dispatch]);
-
   return (
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/review" exact>
-            <ReviewContainer />
-          </Route>
           <Route path="/signup" exact>
             <SignupFormPage />
           </Route>
@@ -40,7 +29,8 @@ function App() {
             <WineContainer />
           </Route>
           <Route path="/:id" exact>
-            <SingleWinePageContainer winos={winos} />
+            {/* <SingleWinePageContainer /> */}
+            <ReviewContainer />
           </Route>
           <Route>
             <HomePage />

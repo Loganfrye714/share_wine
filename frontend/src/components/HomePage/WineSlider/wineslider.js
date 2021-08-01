@@ -10,6 +10,7 @@ import "./wineslider.css";
 const ImageSlider = () => {
   const dispatch = useDispatch();
   const wines = useSelector((state) => Object.values(state.wines));
+  console.log(typeof wines, "this is from wineSlider");
 
   const [current, setCurrent] = useState(0);
   const length = wines.length;
@@ -62,7 +63,7 @@ const ImageSlider = () => {
               </>
             )}
           </div>
-          <div className="allwines__grid" key={index + 1}>
+          {/* <div className="allwines__grid" key={index + 1}>
             {index === current + 1 && (
               <>
                 <div className="wine__card">
@@ -147,8 +148,8 @@ const ImageSlider = () => {
                   </div>
                 </div>
               </>
-            )}
-          </div>
+            )} */}
+          {/* </div> */}
         </>
       ))}
       <ArrowForwardIcon className="slider_right-arrow" onClick={nextSlide} />
