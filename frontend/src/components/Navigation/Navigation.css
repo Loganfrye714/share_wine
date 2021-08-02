@@ -15,6 +15,8 @@
 }
 .header__logo {
   font-family: "Merriweather", serif;
+  padding-left: 40px;
+  padding-right: 10px;
   object-fit: contain;
   text-decoration: none;
   color: #722f37;
