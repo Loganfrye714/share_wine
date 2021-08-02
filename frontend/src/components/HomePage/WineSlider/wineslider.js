@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getWines } from "../../../store/wines";
+import { getWines, getOneWine } from "../../../store/wines";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { NavLink } from "react-router-dom";
@@ -10,7 +10,6 @@ import "./wineslider.css";
 const ImageSlider = () => {
   const dispatch = useDispatch();
   const wines = useSelector((state) => Object.values(state.wines));
-  console.log(typeof wines, "this is from wineSlider");
 
   const [current, setCurrent] = useState(0);
   const length = wines.length;
@@ -52,7 +51,8 @@ const ImageSlider = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <>
-                      <NavLink to={`/${wine.id - 1}`}>
+                      <NavLink to={`/${wine.id}`}>
+                        {console.log(wine.id)}
                         <button id="wine__cardButton" key={wine.id}>
                           Reserve
                         </button>

@@ -29,7 +29,6 @@ function App() {
             <WineContainer />
           </Route>
           <Route path="/:id" exact>
-            {/* <SingleWinePageContainer /> */}
             <ReviewContainer />
           </Route>
           <Route>
