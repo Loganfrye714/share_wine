@@ -41,4 +41,22 @@ router.get(
   })
 );
 
+router.put(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const { rating, comment, wineId, userId } = req.body;
+    const reviewId = req.params.reviewId;
+
+    const PostedReview = await Review.findByPK(reviewId);
+    const updateReview = await PostedReview.update({
+      rating,
+      comment,
+      wineId,
+      userId,
+    });
+
+    return res.json(updateReview);
+  })
+);
+
 module.exports = router;
