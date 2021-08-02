@@ -1,34 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getOneWine } from "../../store/wines";
-import { useParams } from "react-router-dom";
+import { getWines } from "../../store/wines";
+import { useParams, useHistory } from "react-router-dom";
+import { addReview, findReviewsOneWine } from "../../store/review";
+import "./singleWineCard.css";
 
 const SingleWineCard = () => {
-  // const dispatch = useDispatch();
-  // const history = useHistory();
-  // const { id } = useParams();
-
-  // const wines = useSelector((state) => Object.values(state.wines));
-  // const selectedWine = wines[id];
-  // console.log(selectedWine);
-
-  // useEffect(() => {
-  //   dispatch(getWines());
-  // }, [dispatch]);
-
   const dispatch = useDispatch();
+  const history = useHistory();
   const { id } = useParams();
-  const wine = useSelector((state) => Object.values(state.wines));
-  console.log(wine);
-  useEffect(() => {
-    dispatch(getOneWine(id));
-  }, [dispatch, id]);
 
-  // const session = useSelector((state) => state.session);
-  // const [rating, setRating] = useState("");
-  // const [comment, setComment] = useState("");
-  // const [wineId, setWineId] = useState(wines.id);
-  // const [userId, setUserId] = useState(session.user.id);
+  const wines = useSelector((state) => Object.values(state.wines));
+  const selectedWine = wines[id];
+  console.log(selectedWine);
+
+  useEffect(() => {
+    dispatch(getWines());
+  }, [dispatch]);
+
+  const session = useSelector((state) => state.session);
+  const [rating, setRating] = useState("");
+  const [comment, setComment] = useState("");
+  const [wineId, setWineId] = useState(id);
+  const [userId, setUserId] = useState(session.user.id);
 
   // ---- POST A REVIEW CODE ----
   // useEffect(() => {
@@ -50,80 +44,63 @@ const SingleWineCard = () => {
   // };
 
   return (
-    <div>
-      <div>
-        {wine.map((wine) => (
-          <div>
-            <img
-              id="allwines__image"
-              src={wine.img_url}
-              key={wine.id}
-              alt="wines"
-            />
+    // <form onSubmit={onSubmit}>
+    <div className="singleWine__grid">
+      <>
+        <div className="singleWine__bio">
+          <h4>
+            ---placeholder---- Spain is the third largest wine-producing country
+            in the world after Italy and France. That means there's a lot of
+            wonderful Spanish wine to try. But have you taken time to explore
+            the depth of Spanish wines? Whether you're newly curious, or you
+            already have a wine rack full of Rioja, our guide is a great tool.
+            It will help you understand what makes Spanish wine taste the way it
+            does, and feel confident exploring all the interesting vinos de
+            España.
+          </h4>
+        </div>
+        <div className="singleWine__card">
+          <img
+            id="singleWine__image"
+            src={selectedWine.img_url}
+            key={selectedWine.id}
+            alt="singleWine"
+          />
+          <div className="singleWine__cardInfo">
+            <h2>{selectedWine.name}</h2>
+            <h4>{selectedWine.location}</h4>
+            <h4>
+              {selectedWine.grape} {selectedWine.vintage}
+            </h4>
+            <h4>${selectedWine.price}</h4>
+            {/* <div>
+              <button>Post a review</button>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                onChange={(e) => setComment(e.target.value)}
+              ></input>
+            </div>
+            <div>
+              <input
+                type="number"
+                id="rating"
+                name="rating"
+                max="5"
+                onChange={(e) => setRating(e.target.value)}
+              ></input>
+            </div> */}
+            <button id="singleWine__cardButton">Wishlist</button>
           </div>
-        ))}
-      </div>
+        </div>
+        <div className="singleWine__map">
+          <h1>Map Section</h1>
+        </div>
+      </>
     </div>
+    // </form>
   );
 };
 
 export default SingleWineCard;
-
-// // <form onSubmit={onSubmit}>
-// <div className="singleWine__grid">
-//   {wines.map((wine) => (
-//     <>
-//       <div className="singleWine__bio">
-//         <h4>
-//           ---placeholder---- Spain is the third largest wine-producing
-//           country in the world after Italy and France. That means there's a
-//           lot of wonderful Spanish wine to try. But have you taken time to
-//           explore the depth of Spanish wines? Whether you're newly curious,
-//           or you already have a wine rack full of Rioja, our guide is a
-//           great tool. It will help you understand what makes Spanish wine
-//           taste the way it does, and feel confident exploring all the
-//           interesting vinos de España.
-//         </h4>
-//       </div>
-//       <div className="singleWine__card">
-//         <img
-//           id="singleWine__image"
-//           src={wine.img_url}
-//           key={wine.id}
-//           alt="singleWine"
-//         />
-//         <div className="singleWine__cardInfo">
-//           <h2>{wine.name}</h2>
-//           <h4>{wine.location}</h4>
-//           <h4>
-//             {wine.grape} {wine.vintage}
-//           </h4>
-//           <h4>${wine.price}</h4>
-//           {/* <div>
-//           <button>Post a review</button>
-//           <input
-//             type="text"
-//             id="name"
-//             name="name"
-//             onChange={(e) => setComment(e.target.value)}
-//           ></input>
-//         </div>
-//         <div>
-//           <input
-//             type="number"
-//             id="rating"
-//             name="rating"
-//             max="5"
-//             onChange={(e) => setRating(e.target.value)}
-//           ></input>
-//         </div> */}
-//           <button id="singleWine__cardButton">Wishlist</button>
-//         </div>
-//       </div>
-//       <div className="singleWine__map">
-//         <h1>Map Section</h1>
-//       </div>
-//     </>
-//   ))}
-// </div>
-// // </form>

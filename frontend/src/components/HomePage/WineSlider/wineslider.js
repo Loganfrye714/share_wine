@@ -63,7 +63,7 @@ const ImageSlider = () => {
               </>
             )}
           </div>
-          {/* <div className="allwines__grid" key={index + 1}>
+          <div className="allwines__grid" key={index + 1}>
             {index === current + 1 && (
               <>
                 <div className="wine__card">
@@ -148,8 +148,8 @@ const ImageSlider = () => {
                   </div>
                 </div>
               </>
-            )} */}
-          {/* </div> */}
+            )}
+          </div>
         </>
       ))}
       <ArrowForwardIcon className="slider_right-arrow" onClick={nextSlide} />
