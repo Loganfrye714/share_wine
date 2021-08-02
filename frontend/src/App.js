@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import WineContainer from "./components/HomePage/Wines/wines";
-import ReviewContainer from "./components/Review/review";
+import ReviewContainer from "./components/Review/index";
 
 function App() {
   const dispatch = useDispatch();

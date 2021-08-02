@@ -31,6 +31,7 @@ export const allReviews = () => async (dispatch) => {
 export const findReviewsOneWine = (id) => async (dispatch) => {
   const res = await fetch(`/api/review/${id}`);
   const reviewsForOneWine = await res.json();
+  console.log(reviewsForOneWine);
   dispatch(getReviewsOneWine(reviewsForOneWine));
   return reviewsForOneWine;
 };
@@ -68,7 +69,9 @@ const reviewReducer = (state = initalState, action) => {
     }
     case GET_REVIEWS_FOR_ONE_WINE: {
       const newState = { ...state };
-      newState[action.reviews.id] = action.reviews;
+      action.reviews.forEach((review) => {
+        newState[review.id] = review;
+      });
       return newState;
     }
     default:
