@@ -54,7 +54,7 @@ const ReviewContainer = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <button id="singleWine__cardButton">Wishlist</button>
+                    <button id="singleWine__cardButton">Add Wine</button>
                   </div>
                 </div>
                 <div className="singleWine__map">

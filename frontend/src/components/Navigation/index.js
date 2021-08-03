@@ -47,7 +47,7 @@ function Navigation({ isLoaded }) {
             </NavLink>
           </div>
           <div>
-            <h3 className="header__rightend-wines">Wishlist</h3>
+            <h3 className="header__rightend-wines">My Wines</h3>
           </div>
           <div>
             <AccountCircleOutlinedIcon className="header__profile" />
