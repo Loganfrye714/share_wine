@@ -45,9 +45,9 @@ router.put(
   "/:id",
   asyncHandler(async (req, res) => {
     const { rating, comment, wineId, userId } = req.body;
-    const reviewId = req.params.reviewId;
+    const reviewId = req.params.id;
 
-    const PostedReview = await Review.findByPK(reviewId);
+    const PostedReview = await Review.findByPk(reviewId);
     const updateReview = await PostedReview.update({
       rating,
       comment,
@@ -59,4 +59,13 @@ router.put(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const reviewId = req.params.id;
+    const cancelledReview = await Review.findByPk(req.params.id);
+    await cancelledReview.destroy();
+    return res.json();
+  })
+);
 module.exports = router;

@@ -15,9 +15,9 @@
 }
 .header__logo {
   font-family: "Merriweather", serif;
-  padding-left: 40px;
-  padding-right: 10px;
+  margin-left: 100px;
   object-fit: contain;
+  position: static;
   text-decoration: none;
   color: #722f37;
   font-size: 32px;
@@ -31,10 +31,11 @@
   height: 30px;
   padding: 10px;
   color: lightgray;
+  position: static;
   box-shadow: 1px 1px 1px lightgray;
   border: 1px solid lightgray;
   border-radius: 500px;
-  margin-right: 565px;
+  margin-right: 450px;
 }
 
 .header__middle > input {
@@ -42,7 +43,7 @@
   width: 250px;
   outline-width: 0;
   outline-color: transparent;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .header__rightend {
