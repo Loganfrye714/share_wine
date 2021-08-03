@@ -31,7 +31,6 @@ export const allReviews = () => async (dispatch) => {
 export const findReviewsOneWine = (id) => async (dispatch) => {
   const res = await fetch(`/api/review/${id}`);
   const reviewsForOneWine = await res.json();
-  console.log(reviewsForOneWine);
   dispatch(getReviewsOneWine(reviewsForOneWine));
   return reviewsForOneWine;
 };
