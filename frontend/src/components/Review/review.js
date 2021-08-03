@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneWine } from "../../store/wines";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, NavLink } from "react-router-dom";
 import "./review.css";
 
 const ReviewContainer = () => {
@@ -14,6 +14,7 @@ const ReviewContainer = () => {
   }, [dispatch, id]);
 
   const wines = useSelector((state) => Object.values(state.wines));
+  const userId = useSelector((state) => state.session.user.id);
 
   // this conditional is to ensure the page reloads from the home page and pulls only one wine from the redux store
   if (wines.length > 1) {
@@ -54,7 +55,9 @@ const ReviewContainer = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <button id="singleWine__cardButton">Add Wine</button>
+                    <NavLink to={`/wishlist/${userId}`}>
+                      <button id="singleWine__cardButton">Add Wine</button>
+                    </NavLink>
                   </div>
                 </div>
                 <div className="singleWine__map">
