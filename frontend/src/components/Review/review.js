@@ -66,14 +66,14 @@ const ReviewContainer = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <form onSubmit={onSubmit}>
-                      {/* <NavLink to={`/wishlist/${userId}`}> */}
-                      <button
-                        id="singleWine__cardButton"
-                        onClick={(e) => setWineId(wine.id)}
-                      >
-                        Add Wine
-                      </button>
-                      {/* </NavLink> */}
+                      <NavLink to={`/wishlist/${userId}`}>
+                        <button
+                          id="singleWine__cardButton"
+                          onClick={(e) => setWineId(wine.id)}
+                        >
+                          Add Wine
+                        </button>
+                      </NavLink>
                     </form>
                   </div>
                 </div>
