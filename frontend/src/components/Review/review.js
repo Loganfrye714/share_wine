@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneWine } from "../../store/wines";
+import { addWishlist } from "../../store/wishlist";
 import { useParams, useHistory, NavLink } from "react-router-dom";
 import "./review.css";
 
@@ -8,18 +9,27 @@ const ReviewContainer = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
+  const wines = useSelector((state) => Object.values(state.wines));
+  const user_Id = useSelector((state) => state.session.user.id);
+  const [wineId, setWineId] = useState("");
+  const [userId, setUserId] = useState(user_Id);
 
   useEffect(() => {
     dispatch(getOneWine(id));
   }, [dispatch, id]);
 
-  const wines = useSelector((state) => Object.values(state.wines));
-  const userId = useSelector((state) => state.session.user.id);
-
-  // this conditional is to ensure the page reloads from the home page and pulls only one wine from the redux store
   if (wines.length > 1) {
     window.location.reload();
   }
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const wishlist = {
+      userId,
+      wineId,
+    };
+    dispatch(addWishlist(wishlist));
+  };
 
   if (wines.length < 2) {
     return (
@@ -55,9 +65,16 @@ const ReviewContainer = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <NavLink to={`/wishlist/${userId}`}>
-                      <button id="singleWine__cardButton">Add Wine</button>
-                    </NavLink>
+                    <form onSubmit={onSubmit}>
+                      {/* <NavLink to={`/wishlist/${userId}`}> */}
+                      <button
+                        id="singleWine__cardButton"
+                        onClick={(e) => setWineId(wine.id)}
+                      >
+                        Add Wine
+                      </button>
+                      {/* </NavLink> */}
+                    </form>
                   </div>
                 </div>
                 <div className="singleWine__map">

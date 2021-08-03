@@ -32,3 +32,26 @@ export const addWishlist = (wishlist) => async (dispatch) => {
   const addedWishlist = await res.json();
   dispatch(postWishlist(addedWishlist));
 };
+
+let initalState = {};
+
+const wishlistReducer = (state = initalState, action) => {
+  switch (action.type) {
+    case POST_WISHLIST: {
+      const newState = { ...state };
+      newState[action.wishlist.id] = action.wishlist;
+      return newState;
+    }
+    case GET_WISHLIST: {
+      const newState = { ...state };
+      action.wishlist.forEach((list) => {
+        newState[list.id] = list;
+      });
+      return newState;
+    }
+    default:
+      return state;
+  }
+};
+
+export default wishlistReducer;
