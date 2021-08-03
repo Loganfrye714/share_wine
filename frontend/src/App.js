@@ -8,6 +8,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import WineContainer from "./components/HomePage/Wines/wines";
 import ReviewContainer from "./components/Review/index";
+import WishlistContainer from "./components/Wishlist/wishlist";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/:id" exact>
             <ReviewContainer />
+          </Route>
+          <Route path="/Wishlist/:id" exact>
+            <WishlistContainer />
           </Route>
           <Route>
             <HomePage />
