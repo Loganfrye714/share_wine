@@ -21,6 +21,9 @@ const WishlistContainer = () => {
     <div>
       {wishlists.map((wishlist) => (
         <div className="allwines__grid">
+          <div className="singleWine__bio">
+            <h4>Button placeholder</h4>
+          </div>
           <div className="singleWine__grid">
             <>
               <div className="singleWine__card">
@@ -38,6 +41,10 @@ const WishlistContainer = () => {
                   </h4>
                   <h4>${wishlist.Wine.price}</h4>
                 </div>
+              </div>
+              <div className="singleWine__map">
+                <h1>Rating</h1>
+                <h2> ---- </h2>
               </div>
             </>
           </div>
