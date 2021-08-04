@@ -81,7 +81,7 @@ const ImageSlider = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <>
-                      <NavLink to={`/${wine.id - 1}`}>
+                      <NavLink to={`/${wine.id}`}>
                         <button id="wine__cardButton" key={wine.id}>
                           Reserve
                         </button>
@@ -110,7 +110,7 @@ const ImageSlider = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <>
-                      <NavLink to={`/${wine.id - 1}`}>
+                      <NavLink to={`/${wine.id}`}>
                         <button id="wine__cardButton" key={wine.id}>
                           Reserve
                         </button>
@@ -139,7 +139,7 @@ const ImageSlider = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <>
-                      <NavLink to={`/${wine.id - 1}`}>
+                      <NavLink to={`/${wine.id}`}>
                         <button id="wine__cardButton" key={wine.id}>
                           Reserve
                         </button>

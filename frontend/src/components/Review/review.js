@@ -23,7 +23,6 @@ const ReviewContainer = () => {
   }
 
   const onSubmit = async (e) => {
-    e.preventDefault();
     const wishlist = {
       userId,
       wineId,
@@ -66,14 +65,12 @@ const ReviewContainer = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <form onSubmit={onSubmit}>
-                      <NavLink to={`/wishlist/${userId}`}>
-                        <button
-                          id="singleWine__cardButton"
-                          onClick={(e) => setWineId(wine.id)}
-                        >
-                          Add Wine
-                        </button>
-                      </NavLink>
+                      <button
+                        id="singleWine__cardButton"
+                        onClick={(e) => setWineId(wine.id)}
+                      >
+                        Add Wine
+                      </button>
                     </form>
                   </div>
                 </div>

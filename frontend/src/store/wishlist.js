@@ -39,6 +39,7 @@ const wishlistReducer = (state = initalState, action) => {
   switch (action.type) {
     case POST_WISHLIST: {
       const newState = { ...state };
+      console.log(action.wishlist);
       newState[action.wishlist.id] = action.wishlist;
       return newState;
     }
