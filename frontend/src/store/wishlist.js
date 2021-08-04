@@ -44,7 +44,6 @@ const wishlistReducer = (state = initalState, action) => {
     }
     case GET_WISHLIST: {
       const newState = { ...state };
-      console.log(action.wishlists);
       action.wishlists.forEach((wishlist) => {
         newState[wishlist.id] = wishlist;
       });
