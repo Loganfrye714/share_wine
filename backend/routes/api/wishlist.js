@@ -1,7 +1,7 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 const router = express.Router();
-const { Wishlist } = require("../../db/models");
+const { Wishlist, Wine } = require("../../db/models");
 
 router.post(
   "/",
@@ -22,12 +22,18 @@ router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     const id = req.params.id;
+
     const wishlists = await Wishlist.findAll({
       where: {
         userId: id,
       },
+      include: [
+        {
+          model: Wine,
+        },
+      ],
     });
-    return res.json({ wishlists });
+    res.json(wishlists);
   })
 );
 

@@ -7,13 +7,13 @@ const postWishlist = (wishlist) => ({
   wishlist,
 });
 
-const getWishlist = (wishlist) => ({
+const getWishlist = (wishlists) => ({
   type: GET_WISHLIST,
-  wishlist,
+  wishlists,
 });
 
 export const findWishlist = (id) => async (dispatch) => {
-  const res = await `./api/wishlist/${id}`;
+  const res = await fetch(`/api/wishlist/${id}`);
   const wishlist = await res.json();
   dispatch(getWishlist(wishlist));
   return wishlist;
@@ -44,8 +44,9 @@ const wishlistReducer = (state = initalState, action) => {
     }
     case GET_WISHLIST: {
       const newState = { ...state };
-      action.wishlist.forEach((list) => {
-        newState[list.id] = list;
+      console.log(action.wishlists);
+      action.wishlists.forEach((wishlist) => {
+        newState[wishlist.id] = wishlist;
       });
       return newState;
     }
