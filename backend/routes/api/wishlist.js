@@ -37,4 +37,14 @@ router.get(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const wishlistId = req.params.id;
+    const cancelledWishlist = await Wishlist.findByPk(wishlistId);
+    await cancelledWishlist.destroy();
+    return res.json({ message: "wishlist cancelled" });
+  })
+);
+
 module.exports = router;
