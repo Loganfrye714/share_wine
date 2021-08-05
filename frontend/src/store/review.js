@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 const POST_REVIEW = "review/POST_REVIEW";
 const GET_REVIEWS = "review/GET_REVIEWS";
 const GET_REVIEWS_FOR_ONE_WINE = "review/GET_REVIEWS_FOR_ONE_WINE";
+const DELETE_REVIEW = "review/DELETE_REVIEW";
 
 // define action creators
 
@@ -20,6 +21,11 @@ const getReviewsOneWine = (reviews) => ({
   reviews,
 });
 
+const deleteReview = (review) => ({
+  type: DELETE_REVIEW,
+  review,
+});
+
 // Define Thunks
 
 export const allReviews = () => async (dispatch) => {
@@ -33,6 +39,14 @@ export const findReviewsOneWine = (id) => async (dispatch) => {
   const reviewsForOneWine = await res.json();
   dispatch(getReviewsOneWine(reviewsForOneWine));
   return reviewsForOneWine;
+};
+
+export const removeReview = (id) => async (dispatch) => {
+  const res = await csrfFetch(`/api/review/${id}`, {
+    method: "DELETE",
+  });
+  const review = await res.json();
+  dispatch(deleteReview(review));
 };
 
 export const addReview = (review) => async (dispatch) => {

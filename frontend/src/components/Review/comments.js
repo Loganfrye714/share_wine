@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import { findReviewsOneWine, addReview } from "../../store/review";
+import {
+  findReviewsOneWine,
+  addReview,
+  removeReview,
+} from "../../store/review";
 import "./comments.css";
 
 const CommentsCard = () => {
@@ -22,6 +26,10 @@ const CommentsCard = () => {
   const [comment, setComment] = useState("");
   const [wineId, setWineId] = useState(id);
   const [userId, setUserId] = useState(session.user.id);
+
+  const deleteReview = (reviewId) => {
+    dispatch(removeReview(reviewId));
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -61,7 +69,13 @@ const CommentsCard = () => {
         </div>
         <div>
           {reviewArray.map((review) => (
-            <h4>{review.comment}</h4>
+            <div>
+              <button onClick={() => deleteReview(review.id)}>
+                Delete review
+              </button>
+              <button>Edit review</button>
+              <h4>{review.comment}</h4>
+            </div>
           ))}
         </div>
       </form>
