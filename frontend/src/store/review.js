@@ -3,9 +3,9 @@ const POST_REVIEW = "review/POST_REVIEW";
 const GET_REVIEWS = "review/GET_REVIEWS";
 const GET_REVIEWS_FOR_ONE_WINE = "review/GET_REVIEWS_FOR_ONE_WINE";
 const DELETE_REVIEW = "review/DELETE_REVIEW";
+const UPDATE_REVIEW = "review/UPDATE_REVIEW";
 
 // define action creators
-
 const postReview = (review) => ({
   type: POST_REVIEW,
   review,
@@ -26,8 +26,12 @@ const deleteReview = (review) => ({
   review,
 });
 
-// Define Thunks
+const updateReview = (review) => ({
+  type: UPDATE_REVIEW,
+  review,
+});
 
+// Define Thunks
 export const allReviews = () => async (dispatch) => {
   const res = await fetch("./api/review");
   const reviews = await res.json();
@@ -65,6 +69,22 @@ export const addReview = (review) => async (dispatch) => {
   dispatch(postReview(completedReview.review));
 };
 
+export const changeReview = (review) => async (dispatch) => {
+  const { rating, comment, wineId, userId, reviewId } = review;
+  const res = await csrfFetch(`/api/review/${reviewId}`, {
+    method: "POST",
+    body: JSON.stringify({
+      rating,
+      comment,
+      wineId,
+      userId,
+    }),
+  });
+
+  const changedReview = await res.json();
+  dispatch(updateReview(changedReview));
+};
+
 // Define an inital state
 let initalState = {};
 
@@ -76,6 +96,11 @@ const reviewReducer = (state = initalState, action) => {
       newState[action.reviews.id] = action.reviews;
       return newState;
     case POST_REVIEW: {
+      const newState = { ...state };
+      newState[action.review.id] = action.review;
+      return newState;
+    }
+    case UPDATE_REVIEW: {
       const newState = { ...state };
       newState[action.review.id] = action.review;
       return newState;

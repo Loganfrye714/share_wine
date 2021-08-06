@@ -3,23 +3,6 @@ const asyncHandler = require("express-async-handler");
 const router = express.Router();
 const { Review } = require("../../db/models");
 
-router.post(
-  "/",
-  asyncHandler(async (req, res) => {
-    const { rating, comment, wineId, userId } = req.body;
-
-    const review = await Review.build({
-      rating,
-      comment,
-      wineId,
-      userId,
-    });
-
-    await review.save();
-    return res.json({ review });
-  })
-);
-
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -41,6 +24,33 @@ router.get(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const reviewId = req.params.id;
+    const cancelledReview = await Review.findByPk(req.params.id);
+    await cancelledReview.destroy();
+    return res.json();
+  })
+);
+
+router.post(
+  "/",
+  asyncHandler(async (req, res) => {
+    const { rating, comment, wineId, userId } = req.body;
+
+    const review = await Review.build({
+      rating,
+      comment,
+      wineId,
+      userId,
+    });
+
+    await review.save();
+    return res.json({ review });
+  })
+);
+
 router.put(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -56,16 +66,6 @@ router.put(
     });
 
     return res.json(updateReview);
-  })
-);
-
-router.delete(
-  "/:id",
-  asyncHandler(async (req, res) => {
-    const reviewId = req.params.id;
-    const cancelledReview = await Review.findByPk(req.params.id);
-    await cancelledReview.destroy();
-    return res.json();
   })
 );
 

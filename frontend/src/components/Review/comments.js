@@ -5,6 +5,7 @@ import {
   findReviewsOneWine,
   addReview,
   removeReview,
+  changeReview,
 } from "../../store/review";
 import "./comments.css";
 
@@ -40,6 +41,18 @@ const CommentsCard = () => {
       userId,
     };
     dispatch(addReview(review));
+    window.location.reload();
+  };
+
+  const changeReview = async (e) => {
+    e.preventDefault();
+    const review = {
+      rating,
+      comment,
+      wineId,
+      userId,
+    };
+    dispatch(changeReview(review));
     window.location.reload();
   };
 
