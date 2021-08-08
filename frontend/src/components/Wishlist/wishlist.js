@@ -10,6 +10,9 @@ const WishlistContainer = () => {
   const userId = useSelector((state) => state.session.user.id);
   const wishlists = useSelector((state) => Object.values(state.wishlist));
   const userAlias = useSelector((state) => state.session.user.username);
+  const history = useHistory();
+
+  // -> running into an issue where if i use "useState" it causes to many rerenders and crashes the site. Using window.reload as a work around but will have to look into a better option.
 
   useEffect(() => {
     dispatch(findWishlist(userId));
@@ -17,6 +20,7 @@ const WishlistContainer = () => {
 
   const removeWishlist = (wishlistId) => {
     dispatch(deleteWishlist(wishlistId));
+    window.location.reload();
   };
 
   return (
