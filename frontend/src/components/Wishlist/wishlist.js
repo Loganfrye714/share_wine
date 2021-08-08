@@ -27,9 +27,12 @@ const WishlistContainer = () => {
       <div>
         {wishlists.map((wishlist) => (
           <div className="wishlist__grid">
-            <div>
-              <button onClick={() => removeWishlist(wishlist.id)}>
-                Remove
+            <div className="wishlist__button-grid">
+              <button
+                id="wishlist__button"
+                onClick={() => removeWishlist(wishlist.id)}
+              >
+                X
               </button>
             </div>
             <div>

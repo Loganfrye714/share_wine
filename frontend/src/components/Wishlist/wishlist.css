@@ -22,27 +22,28 @@
   max-height: 100%;
 }
 
+.wishlist__button-grid {
+  display: flex;
+  align-items: center;
+}
+
+#wishlist__button {
+  font-weight: bold;
+  border-radius: 100px;
+  padding: 10px;
+  border-color: transparent;
+  color: rgb(121, 106, 106);
+  box-shadow: 0px 2px 2px lightgray;
+  cursor: pointer;
+}
+
+#wishlist__button:hover {
+  background-color: rgba(114, 47, 55, 0.527);
+}
+
 .singleWine__cardInfo {
   margin: 5px;
   word-wrap: break-word;
   font-family: "Noto Sans JP", sans-serif;
   margin-left: 25px;
-}
-
-#singleWine__cardButton:hover {
-  background-color: #a0d3b4;
-}
-
-.singleWine__reviews {
-  background-color: pink;
-}
-
-.singleWine__map {
-  background-color: yellow;
-}
-
-.singleWine__bio {
-  display: flex;
-  width: 250px;
-  font-size: 18px;
 }
