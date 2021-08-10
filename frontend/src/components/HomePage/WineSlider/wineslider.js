@@ -4,16 +4,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { getWines, getOneWine } from "../../../store/wines";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import RatingsCard from "../../Review/ratings";
-import { NavLink } from "react-router-dom";
+import { addWishlist } from "../../../store/wishlist";
+import { NavLink, useParams, useHistory } from "react-router-dom";
 import "./wineslider.css";
 
 const ImageSlider = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+  const { id } = useParams();
   const wines = useSelector((state) => Object.values(state.wines));
+  const user_Id = useSelector((state) => state.session.user.id);
 
+  const [wineId, setWineId] = useState("");
+  const [userId, setUserId] = useState(user_Id);
   const [current, setCurrent] = useState(0);
+
   const length = wines.length;
+
+  const onSubmit = async (e) => {
+    const wishlist = {
+      userId,
+      wineId,
+    };
+    dispatch(addWishlist(wishlist));
+  };
 
   useEffect(() => {
     dispatch(getWines());
@@ -38,12 +52,14 @@ const ImageSlider = () => {
             {index === current && (
               <>
                 <div className="wine__card">
-                  <img
-                    id="allwines__image"
-                    src={wine.img_url}
-                    key={wine.id}
-                    alt="wines"
-                  />
+                  <NavLink to={`/${wine.id}`}>
+                    <img
+                      id="allwines__image"
+                      src={wine.img_url}
+                      key={wine.id}
+                      alt="wines"
+                    />
+                  </NavLink>
                   <div className="wine__cardInfo">
                     <h2>{wine.name}</h2>
                     <h4>{wine.location}</h4>
@@ -52,11 +68,15 @@ const ImageSlider = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <>
-                      <NavLink to={`/${wine.id}`}>
-                        <button id="wine__cardButton" key={wine.id}>
+                      <form onSubmit={onSubmit}>
+                        <button
+                          id="wine__cardButton"
+                          key={wine.id}
+                          onClick={(e) => setWineId(wine.id)}
+                        >
                           Reserve
                         </button>
-                      </NavLink>
+                      </form>
                     </>
                   </div>
                 </div>
@@ -67,12 +87,14 @@ const ImageSlider = () => {
             {index === current + 1 && (
               <>
                 <div className="wine__card">
-                  <img
-                    id="allwines__image"
-                    src={wine.img_url}
-                    key={wine.id}
-                    alt="wines"
-                  />
+                  <NavLink to={`/${wine.id}`}>
+                    <img
+                      id="allwines__image"
+                      src={wine.img_url}
+                      key={wine.id}
+                      alt="wines"
+                    />
+                  </NavLink>
                   <div className="wine__cardInfo">
                     <h2>{wine.name}</h2>
                     <h4>{wine.location}</h4>
@@ -81,11 +103,15 @@ const ImageSlider = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <>
-                      <NavLink to={`/${wine.id}`}>
-                        <button id="wine__cardButton" key={wine.id}>
+                      <form onSubmit={onSubmit}>
+                        <button
+                          id="wine__cardButton"
+                          key={wine.id}
+                          onClick={(e) => setWineId(wine.id)}
+                        >
                           Reserve
                         </button>
-                      </NavLink>
+                      </form>
                     </>
                   </div>
                 </div>
@@ -96,12 +122,14 @@ const ImageSlider = () => {
             {index === current + 2 && (
               <>
                 <div className="wine__card">
-                  <img
-                    id="allwines__image"
-                    src={wine.img_url}
-                    key={wine.id}
-                    alt="wines"
-                  />
+                  <NavLink to={`/${wine.id}`}>
+                    <img
+                      id="allwines__image"
+                      src={wine.img_url}
+                      key={wine.id}
+                      alt="wines"
+                    />
+                  </NavLink>
                   <div className="wine__cardInfo">
                     <h2>{wine.name}</h2>
                     <h4>{wine.location}</h4>
@@ -110,11 +138,15 @@ const ImageSlider = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <>
-                      <NavLink to={`/${wine.id}`}>
-                        <button id="wine__cardButton" key={wine.id}>
+                      <form onSubmit={onSubmit}>
+                        <button
+                          id="wine__cardButton"
+                          key={wine.id}
+                          onClick={(e) => setWineId(wine.id)}
+                        >
                           Reserve
                         </button>
-                      </NavLink>
+                      </form>
                     </>
                   </div>
                 </div>
@@ -125,12 +157,14 @@ const ImageSlider = () => {
             {index === current + 3 && (
               <>
                 <div className="wine__card">
-                  <img
-                    id="allwines__image"
-                    src={wine.img_url}
-                    key={wine.id}
-                    alt="wines"
-                  />
+                  <NavLink to={`/${wine.id}`}>
+                    <img
+                      id="allwines__image"
+                      src={wine.img_url}
+                      key={wine.id}
+                      alt="wines"
+                    />
+                  </NavLink>
                   <div className="wine__cardInfo">
                     <h2>{wine.name}</h2>
                     <h4>{wine.location}</h4>
@@ -139,11 +173,15 @@ const ImageSlider = () => {
                     </h4>
                     <h4>${wine.price}</h4>
                     <>
-                      <NavLink to={`/${wine.id}`}>
-                        <button id="wine__cardButton" key={wine.id}>
+                      <form onSubmit={onSubmit}>
+                        <button
+                          id="wine__cardButton"
+                          key={wine.id}
+                          onClick={(e) => setWineId(wine.id)}
+                        >
                           Reserve
                         </button>
-                      </NavLink>
+                      </form>
                     </>
                   </div>
                 </div>
