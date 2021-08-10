@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOneWine } from "../../store/wines";
 import { addWishlist } from "../../store/wishlist";
 import { useParams, useHistory, NavLink } from "react-router-dom";
+import RatingsCard from "./ratings";
 import "./review.css";
 
 const ReviewContainer = () => {
@@ -45,7 +46,8 @@ const ReviewContainer = () => {
                     alt="singleWine"
                   />
                   <div className="singleWine__cardInfo">
-                    <h2>{wine.name}</h2>
+                    <h3>{wine.name}</h3>
+                    <RatingsCard />
                     <h4>{wine.location}</h4>
                     <h4>
                       {wine.grape} {wine.vintage}

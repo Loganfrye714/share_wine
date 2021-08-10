@@ -29,16 +29,12 @@
 
 #wishlist__button {
   font-weight: bold;
-  border-radius: 100px;
-  padding: 10px;
-  border-color: transparent;
-  color: rgb(121, 106, 106);
-  box-shadow: 0px 2px 2px lightgray;
   cursor: pointer;
+  color: #722f37;
 }
 
 #wishlist__button:hover {
-  background-color: rgba(114, 47, 55, 0.527);
+  color: #992634;
 }
 
 .singleWine__cardInfo {

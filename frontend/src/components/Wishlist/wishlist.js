@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOneWine } from "../../store/wines";
 import { useParams, useHistory } from "react-router-dom";
 import { findWishlist, deleteWishlist } from "../../store/wishlist";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+
 import "./wishlist.css";
 
 const WishlistContainer = () => {
@@ -10,7 +12,6 @@ const WishlistContainer = () => {
   const userId = useSelector((state) => state.session.user.id);
   const wishlists = useSelector((state) => Object.values(state.wishlist));
   const userAlias = useSelector((state) => state.session.user.username);
-  const history = useHistory();
 
   // -> running into an issue where if i use "useState" it causes to many rerenders and crashes the site. Using window.reload as a work around but will have to look into a better option.
 
@@ -25,19 +26,17 @@ const WishlistContainer = () => {
 
   return (
     <>
-      <div>
+      {/* <div>
         <h1>{userAlias} wine's </h1>
-      </div>
+      </div> */}
       <div>
         {wishlists.map((wishlist) => (
           <div className="wishlist__grid">
             <div className="wishlist__button-grid">
-              <button
+              <HighlightOffIcon
                 id="wishlist__button"
                 onClick={() => removeWishlist(wishlist.id)}
-              >
-                X
-              </button>
+              />
             </div>
             <div>
               <>
