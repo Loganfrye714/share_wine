@@ -68,6 +68,7 @@
 #allwines__image:hover {
   height: 375px;
   transition-duration: 0.2s;
+  transition-timing-function: ease-in;
   transform: scale(1.08);
 }
 

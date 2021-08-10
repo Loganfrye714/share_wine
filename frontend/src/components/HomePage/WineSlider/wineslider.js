@@ -18,6 +18,7 @@ const ImageSlider = () => {
   const [wineId, setWineId] = useState("");
   const [userId, setUserId] = useState(user_Id);
   const [current, setCurrent] = useState(0);
+  let [currentTitle, setCurrentTitle] = useState("Add to Wishlist");
 
   const length = wines.length;
 
@@ -42,6 +43,10 @@ const ImageSlider = () => {
   const nextSlide = () => {
     setCurrent(current === 0 ? length - 4 : current - 1);
   };
+
+  function changeTitle() {
+    let currentTitle = "wishlisted";
+  }
 
   return (
     <div className="slider">
@@ -72,9 +77,12 @@ const ImageSlider = () => {
                         <button
                           id="wine__cardButton"
                           key={wine.id}
-                          onClick={(e) => setWineId(wine.id)}
+                          onClick={(e) => {
+                            setWineId(wine.id);
+                            changeTitle();
+                          }}
                         >
-                          Reserve
+                          {currentTitle}
                         </button>
                       </form>
                     </>
