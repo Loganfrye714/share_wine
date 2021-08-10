@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getWines, getOneWine } from "../../../store/wines";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import RatingsCard from "../../Review/ratings";
 import { NavLink } from "react-router-dom";
 import "./wineslider.css";
 
@@ -52,7 +53,6 @@ const ImageSlider = () => {
                     <h4>${wine.price}</h4>
                     <>
                       <NavLink to={`/${wine.id}`}>
-                        {console.log(wine.id)}
                         <button id="wine__cardButton" key={wine.id}>
                           Reserve
                         </button>

@@ -15,6 +15,7 @@ const RatingsCard = () => {
   const { id } = useParams();
   const reviewArray = useSelector((state) => Object.values(state.review));
   const session = useSelector((state) => state.session);
+  let numberOfRatings = reviewArray.length;
 
   useEffect(() => {
     dispatch(findReviewsOneWine(id));
@@ -24,9 +25,18 @@ const RatingsCard = () => {
   reviewArray.forEach((review) => {
     ratings += review.rating;
   });
-  const averageRating = Math.round(ratings / reviewArray.length);
+  const averageRating = Math.round(ratings / numberOfRatings);
 
-  return <h4>Rating - {averageRating} / 5 stars </h4>;
+  if (ratings > 0) {
+    return (
+      <>
+        <h4>Rating - {averageRating} / 5 stars </h4>
+        <h4>{numberOfRatings} ratings</h4>
+      </>
+    );
+  } else {
+    return <h4>Rating - Hasn't been rated yet</h4>;
+  }
 };
 
 export default RatingsCard;

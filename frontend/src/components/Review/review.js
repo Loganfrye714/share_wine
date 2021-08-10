@@ -47,7 +47,6 @@ const ReviewContainer = () => {
                   />
                   <div className="singleWine__cardInfo">
                     <h3>{wine.name}</h3>
-                    <RatingsCard />
                     <h4>{wine.location}</h4>
                     <h4>
                       {wine.grape} {wine.vintage}
@@ -64,7 +63,7 @@ const ReviewContainer = () => {
                   </div>
                 </div>
                 <div className="singleWine__map">
-                  <h1>Map Section</h1>
+                  <RatingsCard />
                 </div>
               </>
             </div>
