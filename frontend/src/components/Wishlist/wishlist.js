@@ -67,19 +67,19 @@ const WishlistContainer = () => {
     );
   } else {
     return (
-      <>
+      <div id="nowWishlist_grid">
         <div>
-          <h1 id="noWishlist">
+          <h1 id="noWishlist_header">
             You don't have any wines in your wishlist yet! click the below to
             check our collection out.
           </h1>
         </div>
         <div>
           <NavLink to="/wines">
-            <button>Checkout Our Wines</button>
+            <button id="noWishlist_button">Checkout Our Wines</button>
           </NavLink>
         </div>
-      </>
+      </div>
     );
   }
 };
