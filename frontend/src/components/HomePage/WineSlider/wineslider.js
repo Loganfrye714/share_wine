@@ -13,11 +13,15 @@ const ImageSlider = () => {
   const history = useHistory();
   const { id } = useParams();
   const wines = useSelector((state) => Object.values(state.wines));
-  const user_Id = useSelector((state) => state.session.user.id);
-
+  // const user_Id = useSelector((state) => state.session.user.id);
+  const session = useSelector((state) => state.session);
   const [wineId, setWineId] = useState("");
-  const [userId, setUserId] = useState(user_Id);
+  const [userId, setUserId] = useState("");
   const [current, setCurrent] = useState(0);
+  // setUserId(user_Id);
+
+  console.log(session);
+
   let [currentTitle, setCurrentTitle] = useState("Add to Wishlist");
 
   const length = wines.length;
