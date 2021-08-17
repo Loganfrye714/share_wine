@@ -22,13 +22,46 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
       </>
     );
   }
 
-  return (
-    <>
+  const onclick = async (e) => {
+    window.alert("You need to be signed in to use this feature!");
+  };
+
+  if (sessionUser) {
+    return (
+      <>
+        <div className="header">
+          <div>
+            <NavLink exact to="/" className="header__logo">
+              Share Wine
+            </NavLink>
+          </div>
+          <div className="header__middle">
+            <input type="text" placeholder="Search any wine" />
+            <SearchOutlinedIcon />
+          </div>
+          <div className="header__rightend">
+            <div>{isLoaded && sessionLinks}</div>
+            <div>
+              <NavLink to="/wines">
+                <h3 className="header__rightend-wines">Wines</h3>
+              </NavLink>
+            </div>
+            <div>
+              <h3 className="header__rightend-wines">My Wines</h3>
+            </div>
+            <div>
+              <AccountCircleOutlinedIcon className="header__profile" />
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  } else {
+    return (
       <div className="header">
         <div>
           <NavLink exact to="/" className="header__logo">
@@ -41,23 +74,17 @@ function Navigation({ isLoaded }) {
         </div>
         <div className="header__rightend">
           <div>{isLoaded && sessionLinks}</div>
-          <div>
-            <NavLink to="/wines">
-              <h3 className="header__rightend-wines">Wines</h3>
-            </NavLink>
-          </div>
-          <div>
-            <NavLink to="/Wishlist/:id">
-              <h3 className="header__rightend-wines">My Wines</h3>
-            </NavLink>
-          </div>
-          <div>
-            <AccountCircleOutlinedIcon className="header__profile" />
-          </div>
+          <h3 className="header__rightend-wines">Wines</h3>
+        </div>
+        <div onClick={onclick}>
+          <h3 className="header__rightend-wines">My Wines</h3>
+        </div>
+        <div>
+          <AccountCircleOutlinedIcon className="header__profile" />
         </div>
       </div>
-    </>
-  );
+    );
+  }
 }
 
 export default Navigation;

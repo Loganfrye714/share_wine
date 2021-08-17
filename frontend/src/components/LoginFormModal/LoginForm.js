@@ -2,8 +2,6 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router";
 import "./LoginForm.css";
 import SignupFormPage from "../SignupFormPage";
 
@@ -34,7 +32,7 @@ function LoginForm({ Modal }) {
           ))}
         </ul>
         <div>
-          <h4> Join Share Wine | Login </h4>
+          <h4 id="login__header">Login </h4>
           <label>
             Username or Email
             <input
@@ -56,7 +54,7 @@ function LoginForm({ Modal }) {
           <button type="submit">Log In</button>
         </div>
         <div>
-          <button onClick={(e) => setSignUpForm(true)}>sign up</button>
+          <button onClick={(e) => setSignUpForm(true)}>Join Share Wine</button>
         </div>
       </form>
     );

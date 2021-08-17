@@ -6,3 +6,9 @@
   height: 450px;
   width: 800px;
 }
+
+#login__header {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
