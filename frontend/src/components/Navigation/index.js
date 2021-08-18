@@ -14,7 +14,7 @@ import { GiGlassCelebration } from "react-icons/gi";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-
+  console.log(sessionUser, "this is session user");
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = <ProfileButton user={sessionUser} />;

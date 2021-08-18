@@ -25,7 +25,6 @@ function LoginForm({ Modal }) {
 
   const handleDemoSubmit = (e) => {
     e.preventDefault();
-    setErrors([]);
     return dispatch(
       sessionActions.login({
         credential: "loganfrye714",
