@@ -51,7 +51,9 @@ function Navigation({ isLoaded }) {
               </NavLink>
             </div>
             <div>
-              <h3 className="header__rightend-wines">My Wines</h3>
+              <NavLink to={`/Wishlist/:${sessionUser.id}`}>
+                <h3 className="header__rightend-wines">My Wines</h3>
+              </NavLink>
             </div>
             <div>
               <AccountCircleOutlinedIcon className="header__profile" />
