@@ -8,13 +8,9 @@ import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
 // import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-import { GiGrapes } from "react-icons/gi";
-import { GiForestCamp } from "react-icons/gi";
-import { GiGlassCelebration } from "react-icons/gi";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-  console.log(sessionUser, "this is session user");
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = <ProfileButton user={sessionUser} />;
@@ -44,20 +40,12 @@ function Navigation({ isLoaded }) {
             <SearchOutlinedIcon />
           </div>
           <div className="header__rightend">
-            <div>{isLoaded && sessionLinks}</div>
-            <div>
-              <NavLink to="/wines">
-                <h3 className="header__rightend-wines">Wines</h3>
-              </NavLink>
-            </div>
             <div>
               <NavLink to={`/Wishlist/:${sessionUser.id}`}>
                 <h3 className="header__rightend-wines">My Wines</h3>
               </NavLink>
             </div>
-            <div>
-              <AccountCircleOutlinedIcon className="header__profile" />
-            </div>
+            <div>{isLoaded && sessionLinks}</div>
           </div>
         </div>
       </>
