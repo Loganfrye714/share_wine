@@ -71,7 +71,11 @@
 }
 
 .header__rightend-wines {
-  color: rgb(92, 91, 91);
+  color: black;
+}
+
+.header__rightend-wines:hover {
+  color: rgb(136, 189, 151);
 }
 
 a {

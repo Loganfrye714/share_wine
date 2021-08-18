@@ -1,5 +1,6 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 import "./ProfileButton.css";
@@ -36,13 +37,14 @@ function ProfileButton({ user }) {
         <i class="fas fa-wine-glass-alt"></i>
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
+        <div className="profile-dropdown">
+          <NavLink to="/wines" style={{ color: "black" }}>
+            <h4 className="dropdown_list">My Wines</h4>
+          </NavLink>
+          <h4 className="dropdown_list" onClick={logout}>
+            Log Out
+          </h4>
+        </div>
       )}
     </>
   );
