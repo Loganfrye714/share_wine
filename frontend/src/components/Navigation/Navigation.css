@@ -35,7 +35,7 @@
   box-shadow: 1px 1px 1px lightgray;
   border: 1px solid lightgray;
   border-radius: 500px;
-  margin-right: 400px;
+  margin-right: 550px;
 }
 
 .header__middle > input {
@@ -71,7 +71,7 @@
 }
 
 .header__rightend-wines {
-  color: black;
+  color: rgba(0, 0, 0, 0.808);
 }
 
 .header__rightend-wines:hover {

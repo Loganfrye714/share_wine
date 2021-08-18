@@ -20,10 +20,6 @@ const ImageSlider = () => {
   const [current, setCurrent] = useState(0);
   // setUserId(user_Id);
 
-  console.log(session);
-
-  let [currentTitle, setCurrentTitle] = useState("Add to Wishlist");
-
   const length = wines.length;
 
   const onSubmit = async (e) => {
@@ -86,7 +82,7 @@ const ImageSlider = () => {
                             changeTitle();
                           }}
                         >
-                          {currentTitle}
+                          More info
                         </button>
                       </form>
                     </>
@@ -121,7 +117,7 @@ const ImageSlider = () => {
                           key={wine.id}
                           onClick={(e) => setWineId(wine.id)}
                         >
-                          Reserve
+                          More info
                         </button>
                       </form>
                     </>
@@ -156,7 +152,7 @@ const ImageSlider = () => {
                           key={wine.id}
                           onClick={(e) => setWineId(wine.id)}
                         >
-                          Reserve
+                          More info
                         </button>
                       </form>
                     </>
@@ -191,7 +187,7 @@ const ImageSlider = () => {
                           key={wine.id}
                           onClick={(e) => setWineId(wine.id)}
                         >
-                          Reserve
+                          More info
                         </button>
                       </form>
                     </>

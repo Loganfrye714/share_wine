@@ -30,6 +30,9 @@
 
 #profile-button {
   cursor: pointer;
+  color: rgba(116, 116, 116, 0.712);
+  height: 40px;
+  width: 40px;
 }
 
 #profile-button:hover {

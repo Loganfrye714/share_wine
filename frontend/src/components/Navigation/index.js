@@ -42,7 +42,7 @@ function Navigation({ isLoaded }) {
           <div className="header__rightend">
             <div>
               <NavLink to={`/Wishlist/:${sessionUser.id}`}>
-                <h3 className="header__rightend-wines">My Wines</h3>
+                <h3 className="header__rightend-wines">Wishlist</h3>
               </NavLink>
             </div>
             <div>{isLoaded && sessionLinks}</div>
@@ -62,16 +62,7 @@ function Navigation({ isLoaded }) {
           <input type="text" placeholder="Search any wine" />
           <SearchOutlinedIcon />
         </div>
-        <div className="header__rightend">
-          <div>{isLoaded && sessionLinks}</div>
-          <h3 className="header__rightend-wines">Wines</h3>
-        </div>
-        <div onClick={onclick}>
-          <h3 className="header__rightend-wines">My Wines</h3>
-        </div>
-        <div>
-          <AccountCircleOutlinedIcon className="header__profile" />
-        </div>
+        <div>{isLoaded && sessionLinks}</div>
       </div>
     );
   }
