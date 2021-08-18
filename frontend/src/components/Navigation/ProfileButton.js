@@ -36,9 +36,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button id="profile-button" onClick={openMenu}>
-        <AccountCircleOutlinedIcon />
-      </button>
+      <AccountCircleOutlinedIcon id="profile-button" onClick={openMenu} />
       {showMenu && (
         <div className="profile-dropdown">
           <NavLink to="/wines" style={{ color: "black" }}>

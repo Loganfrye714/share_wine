@@ -25,9 +25,13 @@
 }
 
 .dropdown_list:hover {
-  color: rgb(136, 189, 151);
+  color: rgb(106, 155, 120);
 }
 
-.profile-button {
-  background-color: white;
+#profile-button {
+  cursor: pointer;
+}
+
+#profile-button:hover {
+  color: rgb(106, 155, 120);
 }
