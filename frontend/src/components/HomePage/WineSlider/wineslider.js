@@ -72,20 +72,9 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <>
-                      <form onSubmit={onSubmit}>
-                        <button
-                          id="wine__cardButton"
-                          key={wine.id}
-                          onClick={(e) => {
-                            setWineId(wine.id);
-                            changeTitle();
-                          }}
-                        >
-                          More info
-                        </button>
-                      </form>
-                    </>
+                    <NavLink to={`/${wine.id}`}>
+                      <button id="wine__cardButton">More Info</button>
+                    </NavLink>
                   </div>
                 </div>
               </>
@@ -110,17 +99,9 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <>
-                      <form onSubmit={onSubmit}>
-                        <button
-                          id="wine__cardButton"
-                          key={wine.id}
-                          onClick={(e) => setWineId(wine.id)}
-                        >
-                          More info
-                        </button>
-                      </form>
-                    </>
+                    <NavLink to={`/${wine.id}`}>
+                      <button id="wine__cardButton">More Info</button>
+                    </NavLink>
                   </div>
                 </div>
               </>
@@ -145,17 +126,9 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <>
-                      <form onSubmit={onSubmit}>
-                        <button
-                          id="wine__cardButton"
-                          key={wine.id}
-                          onClick={(e) => setWineId(wine.id)}
-                        >
-                          More info
-                        </button>
-                      </form>
-                    </>
+                    <NavLink to={`/${wine.id}`}>
+                      <button id="wine__cardButton">More Info</button>
+                    </NavLink>
                   </div>
                 </div>
               </>
@@ -180,17 +153,9 @@ const ImageSlider = () => {
                       {wine.grape} {wine.vintage}
                     </h4>
                     <h4>${wine.price}</h4>
-                    <>
-                      <form onSubmit={onSubmit}>
-                        <button
-                          id="wine__cardButton"
-                          key={wine.id}
-                          onClick={(e) => setWineId(wine.id)}
-                        >
-                          More info
-                        </button>
-                      </form>
-                    </>
+                    <NavLink to={`/${wine.id}`}>
+                      <button id="wine__cardButton">More Info</button>
+                    </NavLink>
                   </div>
                 </div>
               </>
