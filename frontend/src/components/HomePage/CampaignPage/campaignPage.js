@@ -6,13 +6,14 @@ const CampaignPageContainer = () => {
     <div className="campaign__grid">
       <div className="campaign__card">
         <div className="campaign__card-header">
-          <h2 className="campaign__card-header-h2">Region of the month</h2>
-          <h1 className="campaign__card-header-h1">Italy</h1>
+          <h2 className="campaign__card-header-h2">Welcome to Share Wine</h2>
         </div>
         <div className="campaign__card-content">
           <div className="campaign_card-text">
-            <p>Discover the incredible wines of Italy.</p>
-            <button id="campaign_card-button">Explore Now</button>
+            <p>Discover our incredible wines</p>
+            <NavLink exact to="/wines">
+              <button id="campaign_card-button">Explore Now</button>
+            </NavLink>
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ const WineContainer = () => {
               </h4>
               <h4>${wine.price}</h4>
               <NavLink to={`/${wine.id}`}>
-                <button id="wine__cardButton">Reserve</button>
+                <button id="wine__cardButton">More info</button>
               </NavLink>
             </div>
           </div>
