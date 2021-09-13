@@ -46,10 +46,6 @@
   background-color: pink;
 }
 
-.singleWine__map {
-  background-color: yellow;
-}
-
 .singleWine__bio {
   display: flex;
   width: 250px;

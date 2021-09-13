@@ -46,7 +46,7 @@ function LoginForm({ Modal }) {
             ))}
           </ul>
           <div>
-            <h4 id="login__header">Login </h4>
+            <h4 id="login__header">Login | Sign Up </h4>
             <label>
               Username or Email
               <input
@@ -66,12 +66,14 @@ function LoginForm({ Modal }) {
               />
             </label>
             <button type="submit">Log In</button>
-            <button onClick={handleDemoSubmit}>Demo Login</button>
           </div>
           <div>
             <button onClick={(e) => setUserHasALogin(false)}>
               Join Share Wine
             </button>
+          </div>
+          <div>
+            <button onClick={handleDemoSubmit}>Demo Login</button>
           </div>
         </form>
       </>

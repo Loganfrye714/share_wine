@@ -30,12 +30,12 @@ const RatingsCard = () => {
   if (ratings > 0) {
     return (
       <>
-        <h4>Rating - {averageRating} / 5 stars </h4>
-        <h4>{numberOfRatings} ratings</h4>
+        <h4>Average rating - {averageRating} / 5 🌟 </h4>
+        <h4>{reviewArray.length} reviews for this wine</h4>
       </>
     );
   } else {
-    return <h4>Rating - Hasn't been rated yet</h4>;
+    return <h4>Oops! this wine doesn't have a rating yet</h4>;
   }
 };
 
