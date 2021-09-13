@@ -48,124 +48,237 @@ const ImageSlider = () => {
     let currentTitle = "wishlisted";
   }
 
-  return (
-    <div className="slider">
-      <ArrowBackIcon className="slider_left-arrow" onClick={prevSlide} />
-      {wines.map((wine, index) => (
-        <>
-          <div className="allwines__grid" key={index}>
-            {index === current && (
-              <>
-                <div className="wine__card">
-                  <NavLink to={`/${wine.id}`}>
-                    <img
-                      id="allwines__image"
-                      src={wine.img_url}
-                      key={wine.id}
-                      alt="wines"
-                    />
-                  </NavLink>
-                  <div className="wine__cardInfo">
-                    <h2>{wine.name}</h2>
-                    <h4>{wine.location}</h4>
-                    <h4>
-                      {wine.grape} {wine.vintage}
-                    </h4>
-                    <h4>${wine.price}</h4>
+  if (session.length) {
+    return (
+      <div className="slider">
+        <ArrowBackIcon className="slider_left-arrow" onClick={prevSlide} />
+        {wines.map((wine, index) => (
+          <>
+            <div className="allwines__grid" key={index}>
+              {index === current && (
+                <>
+                  <div className="wine__card">
                     <NavLink to={`/${wine.id}`}>
-                      <button id="wine__cardButton">More Info</button>
+                      <img
+                        id="allwines__image"
+                        src={wine.img_url}
+                        key={wine.id}
+                        alt="wines"
+                      />
                     </NavLink>
+                    <div className="wine__cardInfo">
+                      <h2>{wine.name}</h2>
+                      <h4>{wine.location}</h4>
+                      <h4>
+                        {wine.grape} {wine.vintage}
+                      </h4>
+                      <h4>${wine.price}</h4>
+                      <NavLink to={`/${wine.id}`}>
+                        <button id="wine__cardButton">More Info</button>
+                      </NavLink>
+                    </div>
                   </div>
-                </div>
-              </>
-            )}
-          </div>
-          <div className="allwines__grid" key={index + 1}>
-            {index === current + 1 && (
-              <>
-                <div className="wine__card">
-                  <NavLink to={`/${wine.id}`}>
-                    <img
-                      id="allwines__image"
-                      src={wine.img_url}
-                      key={wine.id}
-                      alt="wines"
-                    />
-                  </NavLink>
-                  <div className="wine__cardInfo">
-                    <h2>{wine.name}</h2>
-                    <h4>{wine.location}</h4>
-                    <h4>
-                      {wine.grape} {wine.vintage}
-                    </h4>
-                    <h4>${wine.price}</h4>
+                </>
+              )}
+            </div>
+            <div className="allwines__grid" key={index + 1}>
+              {index === current + 1 && (
+                <>
+                  <div className="wine__card">
                     <NavLink to={`/${wine.id}`}>
-                      <button id="wine__cardButton">More Info</button>
+                      <img
+                        id="allwines__image"
+                        src={wine.img_url}
+                        key={wine.id}
+                        alt="wines"
+                      />
                     </NavLink>
+                    <div className="wine__cardInfo">
+                      <h2>{wine.name}</h2>
+                      <h4>{wine.location}</h4>
+                      <h4>
+                        {wine.grape} {wine.vintage}
+                      </h4>
+                      <h4>${wine.price}</h4>
+                      <NavLink to={`/${wine.id}`}>
+                        <button id="wine__cardButton">More Info</button>
+                      </NavLink>
+                    </div>
                   </div>
-                </div>
-              </>
-            )}
-          </div>
-          <div className="allwines__grid" key={index + 1}>
-            {index === current + 2 && (
-              <>
-                <div className="wine__card">
-                  <NavLink to={`/${wine.id}`}>
-                    <img
-                      id="allwines__image"
-                      src={wine.img_url}
-                      key={wine.id}
-                      alt="wines"
-                    />
-                  </NavLink>
-                  <div className="wine__cardInfo">
-                    <h2>{wine.name}</h2>
-                    <h4>{wine.location}</h4>
-                    <h4>
-                      {wine.grape} {wine.vintage}
-                    </h4>
-                    <h4>${wine.price}</h4>
+                </>
+              )}
+            </div>
+            <div className="allwines__grid" key={index + 1}>
+              {index === current + 2 && (
+                <>
+                  <div className="wine__card">
                     <NavLink to={`/${wine.id}`}>
-                      <button id="wine__cardButton">More Info</button>
+                      <img
+                        id="allwines__image"
+                        src={wine.img_url}
+                        key={wine.id}
+                        alt="wines"
+                      />
                     </NavLink>
+                    <div className="wine__cardInfo">
+                      <h2>{wine.name}</h2>
+                      <h4>{wine.location}</h4>
+                      <h4>
+                        {wine.grape} {wine.vintage}
+                      </h4>
+                      <h4>${wine.price}</h4>
+                      <NavLink to={`/${wine.id}`}>
+                        <button id="wine__cardButton">More Info</button>
+                      </NavLink>
+                    </div>
                   </div>
-                </div>
-              </>
-            )}
-          </div>
-          <div className="allwines__grid" key={index + 1}>
-            {index === current + 3 && (
-              <>
-                <div className="wine__card">
-                  <NavLink to={`/${wine.id}`}>
-                    <img
-                      id="allwines__image"
-                      src={wine.img_url}
-                      key={wine.id}
-                      alt="wines"
-                    />
-                  </NavLink>
-                  <div className="wine__cardInfo">
-                    <h2>{wine.name}</h2>
-                    <h4>{wine.location}</h4>
-                    <h4>
-                      {wine.grape} {wine.vintage}
-                    </h4>
-                    <h4>${wine.price}</h4>
+                </>
+              )}
+            </div>
+            <div className="allwines__grid" key={index + 1}>
+              {index === current + 3 && (
+                <>
+                  <div className="wine__card">
                     <NavLink to={`/${wine.id}`}>
-                      <button id="wine__cardButton">More Info</button>
+                      <img
+                        id="allwines__image"
+                        src={wine.img_url}
+                        key={wine.id}
+                        alt="wines"
+                      />
                     </NavLink>
+                    <div className="wine__cardInfo">
+                      <h2>{wine.name}</h2>
+                      <h4>{wine.location}</h4>
+                      <h4>
+                        {wine.grape} {wine.vintage}
+                      </h4>
+                      <h4>${wine.price}</h4>
+                      <NavLink to={`/${wine.id}`}>
+                        <button id="wine__cardButton">More Info</button>
+                      </NavLink>
+                    </div>
                   </div>
-                </div>
-              </>
-            )}
-          </div>
-        </>
-      ))}
-      <ArrowForwardIcon className="slider_right-arrow" onClick={nextSlide} />
-    </div>
-  );
+                </>
+              )}
+            </div>
+          </>
+        ))}
+        <ArrowForwardIcon className="slider_right-arrow" onClick={nextSlide} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="slider">
+        <ArrowBackIcon className="slider_left-arrow" onClick={prevSlide} />
+        {wines.map((wine, index) => (
+          <>
+            <div className="allwines__grid" key={index}>
+              {index === current && (
+                <>
+                  <div className="wine__card">
+                    <NavLink to={`/${wine.id}`}>
+                      <img
+                        id="allwines__image"
+                        src={wine.img_url}
+                        key={wine.id}
+                        alt="wines"
+                      />
+                    </NavLink>
+                    <div className="wine__cardInfo">
+                      <h2>{wine.name}</h2>
+                      <h4>{wine.location}</h4>
+                      <h4>
+                        {wine.grape} {wine.vintage}
+                      </h4>
+                      <h4>${wine.price}</h4>
+                      <button id="wine__cardButton"> Sign in </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+            <div className="allwines__grid" key={index + 1}>
+              {index === current + 1 && (
+                <>
+                  <div className="wine__card">
+                    <NavLink to={`/${wine.id}`}>
+                      <img
+                        id="allwines__image"
+                        src={wine.img_url}
+                        key={wine.id}
+                        alt="wines"
+                      />
+                    </NavLink>
+                    <div className="wine__cardInfo">
+                      <h2>{wine.name}</h2>
+                      <h4>{wine.location}</h4>
+                      <h4>
+                        {wine.grape} {wine.vintage}
+                      </h4>
+                      <h4>${wine.price}</h4>
+                      <button id="wine__cardButton"> Sign in </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+            <div className="allwines__grid" key={index + 1}>
+              {index === current + 2 && (
+                <>
+                  <div className="wine__card">
+                    <NavLink to={`/${wine.id}`}>
+                      <img
+                        id="allwines__image"
+                        src={wine.img_url}
+                        key={wine.id}
+                        alt="wines"
+                      />
+                    </NavLink>
+                    <div className="wine__cardInfo">
+                      <h2>{wine.name}</h2>
+                      <h4>{wine.location}</h4>
+                      <h4>
+                        {wine.grape} {wine.vintage}
+                      </h4>
+                      <h4>${wine.price}</h4>
+                      <button id="wine__cardButton"> Sign in </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+            <div className="allwines__grid" key={index + 1}>
+              {index === current + 3 && (
+                <>
+                  <div className="wine__card">
+                    <NavLink to={`/${wine.id}`}>
+                      <img
+                        id="allwines__image"
+                        src={wine.img_url}
+                        key={wine.id}
+                        alt="wines"
+                      />
+                    </NavLink>
+                    <div className="wine__cardInfo">
+                      <h2>{wine.name}</h2>
+                      <h4>{wine.location}</h4>
+                      <h4>
+                        {wine.grape} {wine.vintage}
+                      </h4>
+                      <h4>${wine.price}</h4>
+                      <button id="wine__cardButton"> Sign in </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        ))}
+        <ArrowForwardIcon className="slider_right-arrow" onClick={nextSlide} />
+      </div>
+    );
+  }
 };
 
 export default ImageSlider;

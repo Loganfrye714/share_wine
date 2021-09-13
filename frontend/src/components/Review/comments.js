@@ -83,11 +83,10 @@ const CommentsCard = () => {
         <div>
           {reviewArray.map((review) => (
             <div>
+              <h4>{review.comment}</h4>
               <button onClick={() => deleteReview(review.id)}>
                 Delete review
               </button>
-              <button>Edit review</button>
-              <h4>{review.comment}</h4>
             </div>
           ))}
         </div>
