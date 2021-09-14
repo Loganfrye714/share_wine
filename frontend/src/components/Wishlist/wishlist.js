@@ -11,10 +11,18 @@ import "./wishlist.css";
 const WishlistContainer = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.session.user.id);
+  const sessionUser = useSelector((state) => state.session.user);
   const wishlists = useSelector((state) => Object.values(state.wishlist));
 
   // -> running into an issue where if i use "useState" it causes to many rerenders and crashes the site. Using window.reload as a work around but will have to look into a better option.
+
+  let userId;
+
+  if (sessionUser) {
+    userId = sessionUser.id;
+  } else {
+    history.push("/");
+  }
 
   useEffect(() => {
     dispatch(findWishlist(userId));

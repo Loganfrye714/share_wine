@@ -48,7 +48,7 @@ const ImageSlider = () => {
     let currentTitle = "wishlisted";
   }
 
-  if (session.length) {
+  if (session.user) {
     return (
       <div className="slider">
         <ArrowBackIcon className="slider_left-arrow" onClick={prevSlide} />
