@@ -11,9 +11,16 @@ const ReviewContainer = () => {
   const history = useHistory();
   const { id } = useParams();
   const wines = useSelector((state) => Object.values(state.wines));
-  const user_Id = useSelector((state) => state.session.user.id);
+  const sessionUser = useSelector((state) => state.session.user);
   const [wineId, setWineId] = useState("");
-  const [userId, setUserId] = useState(user_Id);
+
+  let userId;
+
+  if (sessionUser) {
+    userId = sessionUser.id;
+  } else {
+    history.push("/");
+  }
 
   useEffect(() => {
     dispatch(getOneWine(id));

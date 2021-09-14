@@ -20,13 +20,20 @@ const CommentsCard = () => {
 
   // Variables for indvidiual wine
   const reviewArray = useSelector((state) => Object.values(state.review));
-  const session = useSelector((state) => state.session);
+  const sessionUser = useSelector((state) => state.session.user);
 
   // state for reviews
   const [rating, setRating] = useState("");
   const [comment, setComment] = useState("");
   const [wineId, setWineId] = useState(id);
-  const [userId, setUserId] = useState(session.user.id);
+
+  let userId;
+
+  if (sessionUser) {
+    userId = sessionUser.id;
+  } else {
+    history.push("/");
+  }
 
   const deleteReview = (reviewId) => {
     dispatch(removeReview(reviewId));
