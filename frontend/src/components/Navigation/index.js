@@ -59,10 +59,12 @@ function Navigation({ isLoaded }) {
           </NavLink>
         </div>
         <div className="header__middle">
-          <input type="text" placeholder="Search any wine" />
+          <input type="text" placeholder="Search feature coming soon...." />
           <SearchOutlinedIcon />
         </div>
-        <div>{isLoaded && sessionLinks}</div>
+        <div className="header__rightend">
+          <div>{isLoaded && sessionLinks}</div>
+        </div>
       </div>
     );
   }
