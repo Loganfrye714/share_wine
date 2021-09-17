@@ -13,7 +13,7 @@ const CampaignPageContainer = () => {
         <div className="campaign__card">
           <div className="campaign__card-header">
             <img
-              className="campaign__card-header.img"
+              className="campaign__card-headerimage "
               alt="view of wine table"
               src="https://images.vivino.com/misc/market_editorial/chocolate_pairing_21/background_image_desktop.jpg"
             />
