@@ -3,6 +3,7 @@
 
 .header {
   display: flex;
+  position: fixed;
   align-items: center;
   position: sticky;
   top: 0%;
@@ -25,6 +26,7 @@
 
 .header__middle {
   display: flex;
+  position: fixed;
   flex: 1;
   align-items: center;
   max-width: fit-content;
