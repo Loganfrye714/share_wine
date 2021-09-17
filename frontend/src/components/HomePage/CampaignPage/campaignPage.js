@@ -35,6 +35,11 @@ const CampaignPageContainer = () => {
       <div className="campaign__grid">
         <div className="campaign__card">
           <div className="campaign__card-header">
+            <img
+              className="campaign__card-headerimage "
+              alt="view of wine table"
+              src="https://images.vivino.com/misc/market_editorial/chocolate_pairing_21/background_image_desktop.jpg"
+            />
             <h2 className="campaign__card-header-h2">Welcome to Share Wine</h2>
           </div>
           <div className="campaign__card-content">
