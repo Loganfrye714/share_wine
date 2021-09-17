@@ -45,35 +45,36 @@ function LoginForm({ Modal }) {
               <li key={idx}>{error}</li>
             ))}
           </ul>
-          <div>
-            <h4 id="login__header">Login | Sign Up </h4>
-            <label>
-              Username or Email
-              <input
-                type="text"
-                value={credential}
-                onChange={(e) => setCredential(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Password
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </label>
-            <button type="submit">Log In</button>
-          </div>
-          <div>
-            <button onClick={(e) => setUserHasALogin(false)}>
-              Join Share Wine
-            </button>
-          </div>
-          <div>
-            <button onClick={handleDemoSubmit}>Demo Login</button>
+          <div className="form__container">
+            <div>
+              <h4 id="login__header">Login | Sign Up </h4>
+              <label>
+                Username or Email
+                <input
+                  type="text"
+                  value={credential}
+                  onChange={(e) => setCredential(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Password
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+              <div />
+              <button type="submit">Log In</button>
+              <button onClick={(e) => setUserHasALogin(false)}>Sign Up</button>
+            </div>
+            <div>
+              <button onClick={handleDemoSubmit}>Demo Login</button>
+            </div>
           </div>
         </form>
       </>

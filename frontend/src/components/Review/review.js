@@ -26,10 +26,6 @@ const ReviewContainer = () => {
     dispatch(getOneWine(id));
   }, [dispatch, id]);
 
-  if (wines.length > 1) {
-    window.location.reload();
-  }
-
   const onSubmit = async (e) => {
     const wishlist = {
       userId,
@@ -37,6 +33,10 @@ const ReviewContainer = () => {
     };
     dispatch(addWishlist(wishlist));
   };
+
+  if (wines.length > 1) {
+    window.location.reload();
+  }
 
   if (wines.length < 2) {
     return (
