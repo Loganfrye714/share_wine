@@ -67,7 +67,7 @@ const CommentsCard = () => {
     <div className="comments_grid">
       <h1>Community reviews</h1>
       <form onSubmit={onSubmit}>
-        <button>Post a review</button>
+        <button className="review__button">Post a review</button>
         <div>
           Comment Here:
           <input
@@ -91,8 +91,11 @@ const CommentsCard = () => {
           {reviewArray.map((review) => (
             <div>
               <h4>{review.comment}</h4>
-              <button onClick={() => deleteReview(review.id)}>
-                Delete review
+              <button
+                className="delete__button"
+                onClick={() => deleteReview(review.id)}
+              >
+                x
               </button>
             </div>
           ))}
