@@ -44,6 +44,7 @@ const ImageSlider = () => {
     setCurrent(current === 0 ? length - 4 : current - 1);
   };
 
+  //
   function changeTitle() {
     let currentTitle = "wishlisted";
   }

@@ -40,40 +40,48 @@ function LoginForm({ Modal }) {
     return (
       <>
         <form onSubmit={handleSubmit} className="login__modal">
-          <ul>
-            {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
-            ))}
-          </ul>
           <div className="form__container">
-            <div>
-              <h4 id="login__header">Login | Sign Up </h4>
-              <label>
-                Username or Email
-                <input
-                  type="text"
-                  value={credential}
-                  onChange={(e) => setCredential(e.target.value)}
-                  required
-                />
-              </label>
+            <div className="form__container-leftSide">
+              <ul>
+                {errors.map((error, idx) => (
+                  <li key={idx}>{error}</li>
+                ))}
+              </ul>
+
+              <div>
+                <h4 id="login__header">Login | Sign Up </h4>
+                <label>
+                  Username or Email
+                  <input
+                    type="text"
+                    value={credential}
+                    onChange={(e) => setCredential(e.target.value)}
+                    required
+                  />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Password
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </label>
+                <div />
+                <button type="submit">Login</button>
+                <button onClick={(e) => setUserHasALogin(false)}>
+                  Sign Up
+                </button>
+              </div>
+              <div>
+                <button onClick={handleDemoSubmit}>Demo Login</button>
+              </div>
             </div>
-            <div>
-              <label>
-                Password
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </label>
-              <div />
-              <button type="submit">Log In</button>
-              <button onClick={(e) => setUserHasALogin(false)}>Sign Up</button>
-            </div>
-            <div>
-              <button onClick={handleDemoSubmit}>Demo Login</button>
+            <div className="form__container-rightSide">
+              This is where the picture will go
             </div>
           </div>
         </form>

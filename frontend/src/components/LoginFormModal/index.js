@@ -11,7 +11,7 @@ function LoginFormModal() {
   return (
     <>
       <h4 id="navigation__login" onClick={() => setShowModal(true)}>
-        Log In | Sign Up{" "}
+        Login | Sign Up{" "}
       </h4>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

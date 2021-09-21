@@ -28,7 +28,7 @@ function DemoLogin() {
         }
         type="submit"
       >
-        Log In
+        Login
       </button>
     </form>
   );

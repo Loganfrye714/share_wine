@@ -2,10 +2,10 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import "./campaignPage.css";
+import LoginFormModal from "../../LoginFormModal";
 
 const CampaignPageContainer = () => {
   const session = useSelector((state) => state.session);
-  console.log(session.user);
 
   if (session.user) {
     return (
@@ -45,10 +45,11 @@ const CampaignPageContainer = () => {
           <div className="campaign__card-content">
             <div className="campaign_card-text">
               <p>
-                We can't wait for your to review, share and try some of our
+                We can't wait for you to review, share and try some of our
                 favorite wines.
               </p>
               <p>First please sign up or login to get started.</p>
+              <LoginFormModal />
             </div>
           </div>
         </div>
