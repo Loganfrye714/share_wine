@@ -81,7 +81,11 @@ function LoginForm({ Modal }) {
               </div>
             </div>
             <div className="form__container-rightSide">
-              This is where the picture will go
+              <img
+                className="login__wineImage"
+                alt="drinking wine"
+                src="https://www.eatthis.com/wp-content/uploads/sites/4/2021/03/drinking-wine.jpg"
+              />
             </div>
           </div>
         </form>

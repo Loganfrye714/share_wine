@@ -11,7 +11,24 @@
 }
 
 .form__container-leftSide {
+  background-color: pink;
 }
 
 .form__container-rightSide {
+}
+
+.form__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.login__wineImage {
+  height: 450px;
+  width: 400px;
+  margin-right: -62px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
