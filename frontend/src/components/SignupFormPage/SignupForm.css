@@ -1,6 +1,31 @@
 .signup__modal {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  height: 350px;
+  width: 500px;
+}
+
+.login__modal {
+  height: 450px;
+  width: 800px;
+}
+
+.form__container-rightSide {
+}
+
+.login__button-signup {
+  margin-top: 5px;
+  font-weight: bold;
+  border-color: transparent;
+  background-color: #44a064a8;
+  color: white;
+  cursor: pointer;
+}
+
+.login__details {
+  border-radius: 10px;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
 }

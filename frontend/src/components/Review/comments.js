@@ -64,41 +64,45 @@ const CommentsCard = () => {
   };
 
   return (
-    <div className="comments_grid">
-      <h1>Community reviews</h1>
+    <div className="comments__grid">
       <form onSubmit={onSubmit}>
-        <button className="review__button">Post a review</button>
         <div>
-          Comment Here:
-          <input
-            type="text"
-            id="name"
-            name="name"
-            onChange={(e) => setComment(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          Your Rating:
-          <input
-            type="number"
-            id="rating"
-            name="rating"
-            max="5"
-            onChange={(e) => setRating(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          {reviewArray.map((review) => (
-            <div>
-              <h4>{review.comment}</h4>
-              <button
-                className="delete__button"
-                onClick={() => deleteReview(review.id)}
-              >
-                x
-              </button>
-            </div>
-          ))}
+          <h1>Community reviews</h1>
+          <button className="review__button">Post a review</button>
+          <div>
+            Comment Here:
+            <input
+              className="comments__textBox"
+              type="text"
+              id="name"
+              name="name"
+              onChange={(e) => setComment(e.target.value)}
+            ></input>
+          </div>
+          <div className="ratings__container">
+            Your Rating:
+            <input
+              className="comments__ratingsBox"
+              type="number"
+              id="rating"
+              name="rating"
+              max="5"
+              onChange={(e) => setRating(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            {reviewArray.map((review) => (
+              <div>
+                <h4>{review.comment}</h4>
+                <button
+                  className="delete__button"
+                  onClick={() => deleteReview(review.id)}
+                >
+                  x
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </form>
     </div>
