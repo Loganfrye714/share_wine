@@ -1,7 +1,8 @@
-.comments_grid {
+.comments__grid {
   padding-left: 150px;
   padding-bottom: 50px;
   padding-top: 20px;
+  display: flex;
 }
 
 .review__button {

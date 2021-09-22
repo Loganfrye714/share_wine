@@ -1,0 +1,21 @@
+#ratings__header {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comments__textBox {
+  border-radius: 10px;
+  padding: 0.5em;
+}
+
+.comments__ratingsBox {
+  border-radius: 10px;
+  padding: 0.5em;
+}
+
+.ratings__container {
+  display: flex;
+  flex-direction: row;
+}
