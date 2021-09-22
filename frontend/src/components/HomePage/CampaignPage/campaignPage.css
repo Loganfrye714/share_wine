@@ -31,7 +31,6 @@
 .campaign__card-header-h2 {
   font-family: "Noto Sans JP", sans-serif;
   position: absolute;
-  z-index: 100;
   color: white;
   font-size: 30px;
   margin-bottom: -30px;
@@ -54,6 +53,7 @@
 
 .campaign__card-content {
   height: 25vh;
+  z-index: 100;
   box-shadow: 0px 10px 25px lightgray;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;

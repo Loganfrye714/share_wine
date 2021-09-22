@@ -47,12 +47,12 @@ function LoginForm({ Modal }) {
                   <li key={idx}>{error}</li>
                 ))}
               </ul>
-
               <div>
                 <h4 id="login__header">Login | Sign Up </h4>
                 <label>
                   Username or Email
                   <input
+                    className="login__details"
                     type="text"
                     value={credential}
                     onChange={(e) => setCredential(e.target.value)}
@@ -64,6 +64,7 @@ function LoginForm({ Modal }) {
                 <label>
                   Password
                   <input
+                    className="login__details"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -71,13 +72,22 @@ function LoginForm({ Modal }) {
                   />
                 </label>
                 <div />
-                <button type="submit">Login</button>
-                <button onClick={(e) => setUserHasALogin(false)}>
+                <button className="login__buttons" type="submit">
+                  Login
+                </button>
+              </div>
+              <div>
+                <button
+                  className="login__buttons"
+                  onClick={(e) => setUserHasALogin(false)}
+                >
                   Sign Up
                 </button>
               </div>
               <div>
-                <button onClick={handleDemoSubmit}>Demo Login</button>
+                <button className="login__buttons" onClick={handleDemoSubmit}>
+                  Demo Login
+                </button>
               </div>
             </div>
             <div className="form__container-rightSide">
