@@ -34,7 +34,7 @@ const RatingsCard = () => {
     return (
       <>
         <h4 id="ratings__header">
-          <p>This wine has been rated an average {averageRating} / 5 🌟</p>
+          <p>This wine has an average rating of {averageRating} / 5 🌟</p>
         </h4>
       </>
     );

@@ -1,7 +1,6 @@
 .singleWine__grid {
   display: flex;
   justify-content: space-evenly;
-  background-color: #eae0c83d;
   flex-wrap: wrap;
   padding-bottom: 50px;
   padding-top: 20px;
@@ -9,7 +8,10 @@
 
 .singleWine__card {
   display: flex;
-  width: 300px;
+  width: 350px;
+  padding: 10px;
+  background-color: #f6f3ef;
+  box-shadow: 0px 10px 10px lightgray;
   position: relative;
 }
 
@@ -30,7 +32,7 @@
   border-radius: 56px;
   padding: 10px 35px;
   position: absolute;
-  margin-top: 30px;
+  margin-bottom: 40px;
   bottom: 0;
   border-color: transparent;
   background-color: #489c68a8;
