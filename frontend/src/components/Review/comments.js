@@ -67,17 +67,16 @@ const CommentsCard = () => {
       <div>
         <form className="comments__form" onSubmit={onSubmit}>
           <h1>Community reviews</h1>
-          <button className="review__button">Post a review</button>
           <div>
             <label>
               Comment Here:
-              <input
+              <textarea
                 className="comments__textBox"
                 type="text"
                 id="name"
                 name="name"
                 onChange={(e) => setComment(e.target.value)}
-              ></input>
+              ></textarea>
             </label>
           </div>
           <div className="ratings__container">
@@ -97,6 +96,7 @@ const CommentsCard = () => {
               </select>
             </label>
           </div>
+          <button className="review__button">Post a review</button>
         </form>
         <div>
           {reviewArray.map((review) => (

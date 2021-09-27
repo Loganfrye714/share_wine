@@ -27,10 +27,13 @@
 
 .comments__ratingsBox {
   width: 100%;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 
 .comments__textBox {
-  width: 95%;
+  width: 90%;
+  height: 100px;
+  margin-top: 5px;
   margin-bottom: 10px;
 }

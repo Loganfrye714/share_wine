@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { changeReview } from "../../../store/review";
+import "./editComment.css";
 
 const EditCommentsCard = () => {
   const history = useHistory();
@@ -37,9 +38,9 @@ const EditCommentsCard = () => {
   };
 
   return (
-    <div>
+    <div className="comments__modal">
       <form className="comments__form" onSubmit={editReview}>
-        <button className="review__button">submit</button>
+        <h2>Edit your review</h2>
         <div>
           <label>
             Comment Here:
@@ -69,6 +70,7 @@ const EditCommentsCard = () => {
             </select>
           </label>
         </div>
+        <button className="review__button">submit</button>
       </form>
     </div>
   );
