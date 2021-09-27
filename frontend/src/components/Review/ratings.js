@@ -18,8 +18,6 @@ const RatingsCard = () => {
   const session = useSelector((state) => state.session);
   let numberOfRatings = reviewArray.length;
 
-  console.log(reviewArray);
-
   useEffect(() => {
     dispatch(findReviewsOneWine(id));
   }, [dispatch]);

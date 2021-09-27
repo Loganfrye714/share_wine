@@ -37,6 +37,7 @@ const CommentsCard = () => {
 
   const deleteReview = (reviewId) => {
     dispatch(removeReview(reviewId));
+    window.location.reload();
   };
 
   const onSubmit = async (e) => {
@@ -48,7 +49,6 @@ const CommentsCard = () => {
       userId,
     };
     dispatch(addReview(review));
-    window.location.reload();
   };
 
   const changeReview = async (e) => {
@@ -60,13 +60,12 @@ const CommentsCard = () => {
       userId,
     };
     dispatch(changeReview(review));
-    window.location.reload();
   };
 
   return (
     <div className="comments__grid">
-      <form onSubmit={onSubmit}>
-        <div>
+      <div>
+        <form onSubmit={onSubmit}>
           <h1>Community reviews</h1>
           <button className="review__button">Post a review</button>
           <div>
@@ -90,21 +89,21 @@ const CommentsCard = () => {
               onChange={(e) => setRating(e.target.value)}
             ></input>
           </div>
-          <div>
-            {reviewArray.map((review) => (
-              <div>
-                <h4>{review.comment}</h4>
-                <button
-                  className="delete__button"
-                  onClick={() => deleteReview(review.id)}
-                >
-                  x
-                </button>
-              </div>
-            ))}
-          </div>
+        </form>
+        <div>
+          {reviewArray.map((review) => (
+            <div>
+              <h4>{review.comment}</h4>
+              <button
+                className="delete__button"
+                onClick={() => deleteReview(review.id)}
+              >
+                x
+              </button>
+            </div>
+          ))}
         </div>
-      </form>
+      </div>
     </div>
   );
 };

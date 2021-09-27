@@ -48,9 +48,16 @@ export const findReviewsOneWine = (id) => async (dispatch) => {
 export const removeReview = (id) => async (dispatch) => {
   const res = await csrfFetch(`/api/review/${id}`, {
     method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id,
+    }),
   });
   const review = await res.json();
   dispatch(deleteReview(review));
+  return review;
 };
 
 export const addReview = (review) => async (dispatch) => {
@@ -110,6 +117,11 @@ const reviewReducer = (state = initalState, action) => {
       action.reviews.forEach((review) => {
         newState[review.id] = review;
       });
+      return newState;
+    }
+    case DELETE_REVIEW: {
+      const newState = { ...state };
+      delete newState[action.review.id];
       return newState;
     }
     default:

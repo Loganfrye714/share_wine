@@ -35,7 +35,6 @@ const winesReducer = (state = initalState, action) => {
   switch (action.type) {
     case SET_WINES:
       const newState = { ...state };
-      console.log(action.wines);
       action.wines.forEach((wine) => {
         newState[wine.id] = wine;
       });

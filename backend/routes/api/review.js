@@ -30,7 +30,7 @@ router.delete(
     const reviewId = req.params.id;
     const cancelledReview = await Review.findByPk(req.params.id);
     await cancelledReview.destroy();
-    return res.json();
+    return res.json({ cancelledReview: "has been deleted" });
   })
 );
 
