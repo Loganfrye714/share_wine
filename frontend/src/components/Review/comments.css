@@ -16,18 +16,13 @@
 }
 
 .delete__button {
-  font-weight: bold;
   border-radius: 35px;
   padding: 5px 10px;
   bottom: 0;
   background-color: white;
-  border-color: #722f37;
   margin-bottom: 25px;
   cursor: pointer;
-  color: #722f37;
-}
-
-.comments__form {
+  color: black;
 }
 
 .comments__ratingsBox {
@@ -36,6 +31,6 @@
 }
 
 .comments__textBox {
-  width: 89.5%;
+  width: 95%;
   margin-bottom: 10px;
 }

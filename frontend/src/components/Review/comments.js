@@ -8,6 +8,7 @@ import {
   changeReview,
 } from "../../store/review";
 import "./comments.css";
+import CommentsModal from "./commentsModal/commentsModal";
 
 const CommentsCard = () => {
   const history = useHistory();
@@ -106,8 +107,10 @@ const CommentsCard = () => {
                 className="delete__button"
                 onClick={() => deleteReview(review.id)}
               >
-                x
+                delete
               </button>
+
+              <CommentsModal />
             </div>
           ))}
         </div>
