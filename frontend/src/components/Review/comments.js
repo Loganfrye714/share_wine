@@ -83,21 +83,25 @@ const CommentsCard = () => {
           <div className="ratings__container">
             <label>
               Your Rating:
-              <input
+              <select
+                name="wine ratings"
                 className="comments__ratingsBox"
-                type="number"
-                id="rating"
-                name="rating"
-                max="5"
                 onChange={(e) => setRating(e.target.value)}
-              ></input>
+              >
+                <option value="">--Please choose an option--</option>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+              </select>
             </label>
           </div>
         </form>
         <div>
           {reviewArray.map((review) => (
             <div>
-              <h4>{review.comment}</h4>
+              <h4>"{review.comment}"</h4>
               <button
                 className="delete__button"
                 onClick={() => deleteReview(review.id)}
