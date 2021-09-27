@@ -5,7 +5,6 @@ import {
   findReviewsOneWine,
   addReview,
   removeReview,
-  changeReview,
 } from "../../store/review";
 import "./comments.css";
 import CommentsModal from "./commentsModal/commentsModal";

@@ -73,13 +73,16 @@ export const addReview = (review) => async (dispatch) => {
   });
 
   const completedReview = await res.json();
-  dispatch(postReview(completedReview.review));
+  dispatch(postReview(completedReview));
 };
 
 export const changeReview = (review) => async (dispatch) => {
   const { rating, comment, wineId, userId, reviewId } = review;
   const res = await csrfFetch(`/api/review/${reviewId}`, {
-    method: "POST",
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       rating,
       comment,
@@ -89,7 +92,7 @@ export const changeReview = (review) => async (dispatch) => {
   });
 
   const changedReview = await res.json();
-  dispatch(updateReview(changedReview));
+  dispatch(updateReview(changedReview.review));
 };
 
 // Define an inital state
