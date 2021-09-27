@@ -65,29 +65,33 @@ const CommentsCard = () => {
   return (
     <div className="comments__grid">
       <div>
-        <form onSubmit={onSubmit}>
+        <form className="comments__form" onSubmit={onSubmit}>
           <h1>Community reviews</h1>
           <button className="review__button">Post a review</button>
           <div>
-            Comment Here:
-            <input
-              className="comments__textBox"
-              type="text"
-              id="name"
-              name="name"
-              onChange={(e) => setComment(e.target.value)}
-            ></input>
+            <label>
+              Comment Here:
+              <input
+                className="comments__textBox"
+                type="text"
+                id="name"
+                name="name"
+                onChange={(e) => setComment(e.target.value)}
+              ></input>
+            </label>
           </div>
           <div className="ratings__container">
-            Your Rating:
-            <input
-              className="comments__ratingsBox"
-              type="number"
-              id="rating"
-              name="rating"
-              max="5"
-              onChange={(e) => setRating(e.target.value)}
-            ></input>
+            <label>
+              Your Rating:
+              <input
+                className="comments__ratingsBox"
+                type="number"
+                id="rating"
+                name="rating"
+                max="5"
+                onChange={(e) => setRating(e.target.value)}
+              ></input>
+            </label>
           </div>
         </form>
         <div>
