@@ -49,17 +49,7 @@ const CommentsCard = () => {
       userId,
     };
     dispatch(addReview(review));
-  };
-
-  const changeReview = async (e) => {
-    e.preventDefault();
-    const review = {
-      rating,
-      comment,
-      wineId,
-      userId,
-    };
-    dispatch(changeReview(review));
+    window.location.reload();
   };
 
   return (
@@ -101,15 +91,14 @@ const CommentsCard = () => {
         <div>
           {reviewArray.map((review) => (
             <div>
-              <h4>"{review.comment}"</h4>
+              <h4>{review.comment}</h4>
               <button
                 className="delete__button"
                 onClick={() => deleteReview(review.id)}
               >
                 delete
               </button>
-
-              <CommentsModal />
+              <CommentsModal reviewId={review.id} />
             </div>
           ))}
         </div>

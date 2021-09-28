@@ -4,7 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { changeReview } from "../../../store/review";
 import "./editComment.css";
 
-const EditCommentsCard = () => {
+const EditCommentsCard = ({ reviewId }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -33,6 +33,7 @@ const EditCommentsCard = () => {
       comment,
       wineId,
       userId,
+      reviewId,
     };
     dispatch(changeReview(review));
   };

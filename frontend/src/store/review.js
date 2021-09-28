@@ -88,11 +88,16 @@ export const changeReview = (review) => async (dispatch) => {
       comment,
       wineId,
       userId,
+      reviewId,
     }),
   });
 
   const changedReview = await res.json();
-  dispatch(updateReview(changedReview.review));
+  console.log(changedReview, "THIS IS CHANGED REVIEW");
+  console.log(changedReview, "THIS IS CHANGED REVIEW");
+  console.log(changedReview, "THIS IS CHANGED REVIEW");
+  console.log(changedReview, "THIS IS CHANGED REVIEW");
+  dispatch(updateReview(changedReview));
 };
 
 // Define an inital state
