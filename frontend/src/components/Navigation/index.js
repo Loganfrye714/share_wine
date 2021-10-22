@@ -6,8 +6,6 @@ import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
-// import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
-import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -21,10 +19,6 @@ function Navigation({ isLoaded }) {
       </>
     );
   }
-
-  const onclick = async (e) => {
-    window.alert("You need to be signed in to use this feature!");
-  };
 
   if (sessionUser) {
     return (

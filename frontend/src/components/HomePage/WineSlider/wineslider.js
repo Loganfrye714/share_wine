@@ -20,15 +20,7 @@ const ImageSlider = () => {
   const [current, setCurrent] = useState(0);
   // setUserId(user_Id);
 
-  const length = wines.length;
-
-  const onSubmit = async (e) => {
-    const wishlist = {
-      userId,
-      wineId,
-    };
-    dispatch(addWishlist(wishlist));
-  };
+  const wineArrayLength = wines.length;
 
   useEffect(() => {
     dispatch(getWines());
@@ -36,18 +28,17 @@ const ImageSlider = () => {
 
   // if the current number reaches the end of the array (length - 1) then set current to the beginning else current + 1
   const prevSlide = () => {
-    setCurrent(current === length - 4 ? 0 : current + 1);
+    setCurrent(current === wineArrayLength - 4 ? 0 : current + 1);
   };
+
+  // const prevSlide2 = () => {
+  //   setCurrent(current === wines[0] + 1);
+  // };
 
   // if current is === 0 (original image) set the length - 1 else subtract one
   const nextSlide = () => {
-    setCurrent(current === 0 ? length - 4 : current - 1);
+    setCurrent(current === 0 ? wineArrayLength - 4 : current - 1);
   };
-
-  //
-  function changeTitle() {
-    let currentTitle = "wishlisted";
-  }
 
   if (session.user) {
     return (

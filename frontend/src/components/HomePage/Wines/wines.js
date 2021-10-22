@@ -10,7 +10,6 @@ const WineContainer = () => {
   // Declare variables from hooks
   const dispatch = useDispatch();
   const wines = useSelector((state) => Object.values(state.wines));
-  const session = useSelector((state) => state.session);
 
   const [wineId, setWineId] = useState("");
   const [userId, setUserId] = useState("");

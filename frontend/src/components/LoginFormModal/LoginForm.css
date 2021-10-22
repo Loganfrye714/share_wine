@@ -14,9 +14,6 @@
   padding: 10px;
 }
 
-.form__container-rightSide {
-}
-
 .form__container {
   display: flex;
   justify-content: space-evenly;

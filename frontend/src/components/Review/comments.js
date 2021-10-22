@@ -14,10 +14,6 @@ const CommentsCard = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  useEffect(() => {
-    dispatch(findReviewsOneWine(id));
-  }, [dispatch]);
-
   // Variables for indvidiual wine
   const reviewArray = useSelector((state) => Object.values(state.review));
   const sessionUser = useSelector((state) => state.session.user);
@@ -26,8 +22,16 @@ const CommentsCard = () => {
   const [rating, setRating] = useState("");
   const [comment, setComment] = useState("");
   const [wineId, setWineId] = useState(id);
+  const [newWineComments, setnewWineComments] = useState([]);
+  const [reviewSent, setReviewSent] = useState(false);
+
+  useEffect(() => {
+    dispatch(findReviewsOneWine(id)).then((data) => setnewWineComments(data));
+  }, [dispatch, reviewSent]);
 
   let userId;
+
+  console.log(newWineComments, "this is newWineComments");
 
   if (sessionUser) {
     userId = sessionUser.id;
@@ -37,7 +41,6 @@ const CommentsCard = () => {
 
   const deleteReview = (reviewId) => {
     dispatch(removeReview(reviewId));
-    window.location.reload();
   };
 
   const onSubmit = async (e) => {
@@ -49,7 +52,6 @@ const CommentsCard = () => {
       userId,
     };
     dispatch(addReview(review));
-    window.location.reload();
   };
 
   return (
@@ -86,10 +88,15 @@ const CommentsCard = () => {
               </select>
             </label>
           </div>
-          <button className="review__button">Post a review</button>
+          <button
+            className="review__button"
+            onClick={() => setReviewSent(true)}
+          >
+            Post a review
+          </button>
         </form>
         <div>
-          {reviewArray.map((review) => (
+          {newWineComments.map((review) => (
             <div>
               <h4>{review.comment}</h4>
               <button

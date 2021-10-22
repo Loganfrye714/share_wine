@@ -93,10 +93,6 @@ export const changeReview = (review) => async (dispatch) => {
   });
 
   const changedReview = await res.json();
-  console.log(changedReview, "THIS IS CHANGED REVIEW");
-  console.log(changedReview, "THIS IS CHANGED REVIEW");
-  console.log(changedReview, "THIS IS CHANGED REVIEW");
-  console.log(changedReview, "THIS IS CHANGED REVIEW");
   dispatch(updateReview(changedReview));
 };
 
